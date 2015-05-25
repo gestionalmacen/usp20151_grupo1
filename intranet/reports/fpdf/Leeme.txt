@@ -1,2 +1,0 @@
-FPDF es una libreria en php para generar archivos pdf
-desde una pagina web

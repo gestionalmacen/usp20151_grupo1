@@ -1,0 +1,37 @@
+body{
+background-image:url(imagenes/fondo.jpg);
+background-size:cover;
+	font-family:verdana;
+	font-size:9pt;
+}
+
+.tit {
+	font-size:11pt;	
+	font-weight:bold;	
+	margin-left:20px;	
+	color:#245472;
+}
+.cont {  
+	margin-left:20px;
+	margin-right:20px;
+}
+
+/* Titulos para los formularios */
+.form-title{
+	font-size:18pt;
+	color:#245472;
+}
+
+/* Estilos para el menu principal */
+#tabla-menu{
+	width:100%; 
+	max-width:890px;
+	min-width:100px;
+}
+
+/* Estilos para el contenido de la pagina */
+#tabla-contenidoweb{
+	width:100%; 
+	max-width:890px;
+	min-width:890px;
+}

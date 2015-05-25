@@ -10,33 +10,30 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">	
 	<script src="js/bootstrap.min.js"></script>	
 	<!-- Personalizado -->
-	<link href="css/mystyles.css" rel="stylesheet">	
-	<script src="js/ajax_ui.js"></script>	
-	<!-- Slider -->	
-	<link href="css/mystyles_slider.css" rel="stylesheet">
-	<script src="js/myslider.js"></script>
-	<script src="intranet/ui/js/valida.js"></script>
+	<link href="css/my_styles.css" rel="stylesheet">	
+	<script src="js/ajax_funciones.js"></script>
+	<script src="js/ajax_data.js"></script>		
+	<!-- Slider -->
+	<link href="css/my_slider_styles.css" rel="stylesheet">
+	<script src="js/my_slider.js"></script>
 	<!-- Titulo -->
 	<title>Pagina web</title>
 </head>
 
 <!-------------------------- Cuerpo del documento -------------------->
 <body>
-<!-- tabla Banner -->
 <table align="center" width="890px">
 <tr><td height="110px" bgcolor="#FFFFFF">
-		<img src="imagenes/banner.png" border="0" width="890px" />
+		<img src="imagenes/banner.PNG" border="0" />
 	</td>
 </tr>
 </table>
 
-<!-- tabla Menu -->
-<table id="tabla_menu" align="center">
-<tr>
-<td>
-	<div class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-	<!-- menu header -->
+<!-- Menu -->
+<table id="tabla-menu" align="center">
+<tr><td>
+<div class="navbar navbar-inverse" role="navigation">
+<div class="container-fluid">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
 			<span class="sr-only">Toggle navigation</span>
@@ -45,121 +42,128 @@
 			<span class="icon-bar"></span> 
 		</button>
 		<a class="navbar-brand" href="index.html">Inicio</a>
-	</div>	
-	<!-- menu contenido -->
+	</div>
+	
 	<div class="navbar-collapse collapse">
-		<ul class="nav navbar-nav">	
-			<li><a href="#" style="cursor:pointer"> </a></li>
-
+		<ul class="nav navbar-nav">			
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Nosotros <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+				
+					<li><a data-toggle="modal"  onclick="load_div('contenido', 'vision.php');" style="cursor:pointer">
+						Vision</a></li>              
+					<li><a data-toggle="modal"  onclick="load_div('contenido', 'mision.php');" style="cursor:pointer">
+						Mision</a></li> 	
 					
+						
+				</ul>
+			</li>			
+			
+			<li class="dropdown"> 
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Productos <b class="caret"></b></a>
+				<ul class="dropdown-menu">					
+					<li><a data-toggle="modal"  onclick="load_div('contenido', 'semillas.php');" style="cursor:pointer">
+						Semillas</a></li>              
+					<li><a data-toggle="modal"  onclick="load_div('contenido', 'herramientas.php');" style="cursor:pointer">
+						Herramientas</a></li> 
+					<li><a data-toggle="modal"  onclick="load_div('contenido', 'fertilizantes.php');" style="cursor:pointer">
+						Fertilizantes</a></li>
+				</ul>
+			</li>
+			
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'intranet/forms/usuario_login.php');" style="cursor:pointer">
-				Login</a></li>
-		</ul>		
+				<ul class="nav navbar-nav navbar-right">
+			<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'login.php');" style="cursor:pointer">
+						Login</a></li>
+				</ul>
 	</div>
-	<!-- fin menu -->
-	</div>
-	</div>
+</div>
+</div>
 </td>
 </tr>
 </table>
 
-<!-- table contenido, slider y modal -->
 <table align="center" width="890px">
+<!-- Slider -->
 <tr height="360px">
-<td align="center" valign="middle" bgcolor="#F8F8F8">	
-	<!-- Contenido Inicial-->
-	<!-- Slider Inicial-->	
-		<center>
-			<div id="contenedor">
-				<div id="myCarousel" class="carousel slide">
-				  <ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-					<li data-target="#myCarousel" data-slide-to="4"></li>
-				  </ol>
-				  <!-- Carousel items-->
-				  <div align="center" class="carousel-inner">
-					<div class="active item"><img  src="imagenes/image1.png" alt="banner1" /></div>
-					<div class="item"><img  src="imagenes/image2.png" alt="banner2" /></div>
-					<div class="item"><img  src="imagenes/image3.png" alt="banner3" /></div>
-					<div class="item"><img  src="imagenes/image1.png" alt="banner4" /></div>
-					<div class="item"><img  src="imagenes/image2.png" alt="banner5" /></div>
-				  </div>
-				  <!-- Carousel nav -->
-				  <a align="top" class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-				  <a align="center" class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	<TD> <IMG width="125" src="imagenes/barra.JPG"> </IMG> </TD>
+	<td align="center" valign="middle" bgcolor="#F8F8F8">
+	
+	<!-- Contenido: aqui se mostraran los formularios -->
+			<div id="contenido">	
+						<DIV id="micarrusel" class="carousel slide">
+							<DIV class="carousel-inner">
+								<DIV class="item active"> 
+									<IMG src="imagenes/plantas1.jpg" width="300" height="300" alt="slide 1">
+										<DIV class="carousel-caption">
+											<DIV>
+											</DIV>
+										</DIV>
+								</DIV>
+								<DIV class="item"> 
+										<IMG src="imagenes/productos.jpg" width="300" height="300" alt="slide 2">
+											<DIV class="carousel-caption">
+												<DIV>
+												</DIV>
+											</DIV>
+								</DIV>
+							</DIV>
+							<a class="left carousel-control" href="#micarrusel" data-slide="prev" ><</a>
+							<a class="right carousel-control" href="#micarrusel" data-slide="next" >></a>
+						</DIV>
+					<br>
+						<DIV class="panel panel-success">
+							<DIV class="panel-heading">Bienvenido</DIV>
+								<DIV class="panel-body">
+									En esta web encontraras ...
+								</DIV>
+						</DIV>
+			</div>
+</td>
+<TD align="right"> <IMG width="125" src="imagenes/barra.JPG"> </IMG> </TD>
+</tr>
+<!-- Modal dialog -->
+<tr>
+	<td>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">		
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Gestion de Almacen</h4>
+						</div>
+						<!-- Modal body: aqui se mostraran las ventanas emergentes -->
+						<center><div id="modal_body" class="modal-body"></div></center>	
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>    
+						</div>		  
+					</div>		
 				</div>
 			</div>
-		</center>
-	</td></tr>
-	   
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('.carousel').carousel()
-		});
-	</script> 	
-	<!-- Slider Final -->	
-	<!-- Contenido Final-->
-</td>
-</tr>
-
-<tr>
-<td>	
-	<!-- Modal dialog "#myModal" -->		
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">	
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel">Sistema Gestion de Almacen</h4>
-			</div>		
-			<center><div id="modal_body" class="modal-body"></div></center>	
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>    
-			</div>		  
-		</div>		
-	</div>
-	</div>
-</td>
+	</td>
 </tr>                         
 </table>
 
-<!-- table contenido2 y footer -->
 <table width="890px" align="center">
-<tr>
-<td>
-    <!-- Contenido2 -->
-	<div id="contenido2">
-	<table width="890px" height="10px">
-		<tr bgcolor="#F8F8F8">
-			<td><p class="cont"></p></td>
-			<td><p class="tit"></p>
-				<p class="cont"></p></td>
-		</tr>        
-	</table>
-	</div>
-</td>
-</tr>
-
-<tr>
-<td>
-	<!-- Footer -->
-	<footer>
-	<table height="60px" width="890px" class="panel-footer">
-		<tr><td>
-			<center>USP</center>
+<!-- Footer -->
+	<tr>
+		<td>
+			<footer>
+				<table height="60px" width="890px" class="panel-footer">
+					<tr>
+						<td>
+							<center></center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>Victor Orbegozo Percovich - Henry Sullon Pizarro</center>
+						</td>
+					</tr>
+				</table>
+			</footer>
 		</td>
-		</tr>
-	</table>
-    </footer>
-</td>
-</tr>
+	</tr>
 </table>
 
 </body>
