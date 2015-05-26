@@ -38,7 +38,7 @@
 <!-- Menu -->
 <table id="tabla-menu" align="center">
 <tr><td>
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-default" role="navigation">
 <div class="container-fluid">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
@@ -55,103 +55,57 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Mantenedores <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-				
+				<!--Responsable de Almacen-->
 				<?php if($_SESSION['tipo_usuario']=='almacen'){ ?>
 					<li class="dropdown-header">Productos</li>
 					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_reg.php');" style="cursor:pointer">
-						Registrar producto</a></li>              
+						Almacen</a></li>              
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Listar producto</a></li>	
-					<li class="divider"></li>
-					<?php } ?>
-					
-					<?php if($_SESSION['tipousuario']=='administrador'){ ?>
-					<li class="dropdown-header">Tipo Producto</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'tipoproducto/tipoproducto_reg.php');" style="cursor:pointer">
-						Registrar Tipo Producto</a></li>              	
-					<li class="divider"></li>
-					<?php } ?>
-					
-					
-					<?php if($_SESSION['tipousuario']=='administrador'){ ?>
-					<li class="dropdown-header">Pedido</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'pedido/pedido_reg.php');" style="cursor:pointer">
-						Registrar Pedido</a></li>              
-					<li><a href="#" onclick="load_div('contenido', 'pedido/pedido_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Listar Pedido</a></li>	
-					<li class="divider"></li>
-					<?php } ?>
-					
-					
-					<?php if($_SESSION['tipousuario']=='administrador'){ ?>
-					<li class="dropdown-header">Proveedores</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'proveedor/proveedor_reg.php');" style="cursor:pointer">
-						Registrar Proveedor</a></li>              
-					<li><a href="#" onclick="load_div('contenido', 'proveedor/proveedor_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Listar Proveedor</a></li>	
-					<li class="divider"></li>
-					<?php } ?>
-					
-				<?php if($_SESSION['tipousuario']=='administrador'){ ?>
-					<li class="dropdown-header">Usuario</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'usuario/usuario_reg.php');" style="cursor:pointer">
-						Registrar Usuario</a></li>  
-					<li class="divider"></li>						
-					<?php } ?>
-					
-				<?php if($_SESSION['tipousuario']=='vendedor'){ ?>
-					<li class="dropdown-header">Clientes</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'cliente/cliente_reg.php');" style="cursor:pointer">
-						Registrar cliente</a></li> 						
-					<li><a href="#" onclick="load_div('contenido', 'cliente/cliente_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Listar cliente</a></li>
-					<li class="divider"></li>
+						Apertura y Cierre por Inventario</a></li>	
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Kardex de Producto por mes</a></li>	
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Categoria</a></li>	
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Subcategoria</a></li>
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Catalogo de Productos</a></li>	
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Proveedores</a></li>
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Nota de Salida</a></li>	
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Nota de Ingreso</a></li>							
 				<?php } ?>
-				
-				<?php if($_SESSION['tipousuario']=='almacenero'){ ?>
-					<li class="dropdown-header">Almacen</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'almacen/almacen_reg.php');" style="cursor:pointer">
-						Registrar Producto en almacen</a></li>
-					<li><a href="#" onclick="load_div('contenido', 'almacen/almacen_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Listar Productos en almacen</a></li> 						
-					<li class="divider"></li>
-				<?php } ?>
-				
-				<?php if($_SESSION['tipousuario']=='administrador'){ ?>
-					<li class="dropdown-header">Trabajador</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'trabajador/trabajador_reg.php');" style="cursor:pointer">
-						Registrar trabajador</a></li>
-					<li><a href="#" onclick="load_div('contenido', 'trabajador/trabajador_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Listar trabajador</a></li>
-				<?php } ?>
-					
-				<?php if($_SESSION['tipousuario']=='vendedor'){ ?>
-					<li class="dropdown-header">Ventas</li>
-					<li><a href="#" onclick="load_div('contenido', 'venta/venta_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Realizar Venta </a></li>
-				<?php } ?>
-				
+				<!--Fin-->
+				<!--Jefe de Almacen-->
+				<?php if($_SESSION['tipo_usuario']=='jefe area'){ ?>
+					<li class="dropdown-header">Registro de Solicitud</li>
+					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_reg.php');" style="cursor:pointer">
+						Producto por oficina</a></li>              
+				<?php } ?>	
+				<!--Fin-->				
 				</ul>
-			</li>		
+			</li>	
+			<?php if($_SESSION['tipo_usuario']=='almacen'){ ?>			
 			<li class="dropdown"> 
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Reporte <b class="caret"></b></a>
-				<ul class="dropdown-menu">					
+				<ul class="dropdown-menu">	
 					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
-						Listar venta</a></li>
-					<li><a href="reporte/dlglistacliente.php" target="_blank"  style="cursor:pointer">
-						Listar Cliente</a></li>
-						<li><a href="reporte/dlglistaproducto.php" target="_blank"  style="cursor:pointer">
-						Listar Producto</a></li>
-						<li><a href="reporte/dlglistaproveedor.php" target="_blank"  style="cursor:pointer">
-						Listar Proveedores</a></li>
-						<li><a href="reporte/dlglistapedido.php" target="_blank"  style="cursor:pointer">
-						Listar Pedidos</a></li>
-						<li><a href="reporte/barrasm.php" target="_blank" style="cursor:pointer">
-						Listar Venta Estadistica Barras Mes </a></li>
-						<li><a href="reporte/barrasventacliente.php" target="_blank" style="cursor:pointer">
-						Listar Barra Estadistica Ventas de  Cliente </a></li>
-				</ul>
+						Movimiento por Oficina por Mes</a></li>
+					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+						Movimiento por producto por periodo por mes</a></li>
+					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+						Catalogo por almacen</a></li>
+					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+						Inventario por almacen</a></li>
+					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+						Solicitud de bienes</a></li>
+					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+						Adquisición de productos a proveedor por periodo y mes</a></li>
+				</ul>			
 			</li>
+			<?php } ?>	
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 		<li><a href="../salir.php"> Salir</a></li>	
@@ -162,6 +116,10 @@
 </td>
 </tr>
 </table>
+
+<!---->
+
+<!---->
 
 <table align="center" width="890px">
 <!-- Slider -->
@@ -247,6 +205,8 @@
 </table>
 
 </body>
+
+
 </html>
 <?php
 }
