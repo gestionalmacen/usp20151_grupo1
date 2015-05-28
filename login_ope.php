@@ -4,7 +4,7 @@
 	$cnn = conectar();
 	$usuario = $_POST['usuario'];
 	$clave = $_POST['clave'];
-	$query = "SELECT * FROM v_login v where v.nombre = '$usuario' and v.clave = md5('$clave') ;";
+	$query = "SELECT * FROM v_loginu v where v.nombre = '$usuario' and v.clave = md5('$clave') ;";
 	$rs = mysql_query ($query,$cnn);
 	$n = is_resource($rs)?mysql_num_rows($rs):0;
 	if($n>0){
@@ -12,7 +12,7 @@
                 $_SESSION['estado']=$row[4];
                 if($_SESSION['estado']=='A')
                 {
-                    $_SESSION['tipo_usuario']=$row[1];
+                    $_SESSION['idgrupo_usuario']=$row[3];
                     $_SESSION['nombre']=$row[2];
                     $_SESSION['usuario']=$usuario;
                     echo "Bienvenido";

@@ -56,7 +56,7 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Mantenedores <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 				<!--Responsable de Almacen-->
-				<?php if($_SESSION['tipo_usuario']=='almacen'){ ?>
+				<?php if($_SESSION['idgrupo_usuario']==3){ ?>
 					<li class="dropdown-header">Productos</li>
 					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_reg.php');" style="cursor:pointer">
 						Almacen</a></li>              
@@ -78,8 +78,16 @@
 						Nota de Ingreso</a></li>							
 				<?php } ?>
 				<!--Fin-->
+                                <!--Administrador-->
+                                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
+					<li class="dropdown-header">Grupo de Usuario</li>
+					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'grupo_usuario/grupo_u_reg.php');" style="cursor:pointer">
+						Registrar Nuevo Grupo</a></li>
+                                        <li><a href="#" onclick="load_div('contenido', 'grupo_usuario/grupo_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Listar grupos</a></li>
+				<?php } ?>
 				<!--Jefe de Almacen-->
-				<?php if($_SESSION['tipo_usuario']=='jefe area'){ ?>
+				<?php if($_SESSION['idgrupo_usuario']==2){ ?>
 					<li class="dropdown-header">Registro de Solicitud</li>
 					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_reg.php');" style="cursor:pointer">
 						Producto por oficina</a></li>              
@@ -87,7 +95,7 @@
 				<!--Fin-->				
 				</ul>
 			</li>	
-			<?php if($_SESSION['tipo_usuario']=='almacen'){ ?>			
+			<?php if($_SESSION['idgrupo_usuario']==3){ ?>			
 			<li class="dropdown"> 
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Reporte <b class="caret"></b></a>
 				<ul class="dropdown-menu">	

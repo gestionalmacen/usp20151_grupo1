@@ -21,7 +21,7 @@
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
 			<button type="button" onclick="login();" class="btn btn-primary">Acceder</button>
-                        <button type="button" class="btn btn-primary"> Recuperar Contraseña</button>
+                        
 		</td>
 	</tr>
 </table>
