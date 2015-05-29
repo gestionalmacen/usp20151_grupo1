@@ -1,0 +1,188 @@
+#v_menu_wrap {	
+    width: 200px; 		/* Ancho del acordeon */    
+    font-size: 11pt;
+}
+/* menus -------------------------------------- */
+.v_menu{ /* menu entero */
+	margin: 0;
+    padding: 0;
+	list-style: none; 	
+	/* borde difuminado (segun navegador) */
+	-webkit-box-shadow: 0px 1px  3px 0px rgba(130,130,130,.73), 
+						0px 0px 18px 0px rgba(130,130,130,.13);
+	-moz-box-shadow:    0px 1px  3px 0px rgba(130,130,130,.73), 
+					    0px 0px 18px 0px rgba(130,130,130,.13);
+	box-shadow: 		0px 1px  3px 0px rgba(130,130,130,.73), 
+						0px 0px 18px 0px rgba(130,130,130,.13);
+}
+.v_menu>li>a{ /* cada menu */	
+	/* fondo degradado*/
+	background-color: #F7F8F9;
+	background-image: -webkit-gradient(linear, left top, left bottom, 
+					     from(rgb(245, 246, 247)), to(rgb(225, 228, 232)));
+	background-image: -webkit-linear-gradient(top, rgb(245, 246, 247), rgb(225, 228, 232));
+	background-image:    -moz-linear-gradient(top, rgb(245, 246, 247), rgb(225, 228, 232));
+	background-image:      -o-linear-gradient(top, rgb(245, 246, 247), rgb(225, 228, 232));
+    background-image:     -ms-linear-gradient(top, rgb(245, 246, 247), rgb(225, 228, 232));
+    background-image:         linear-gradient(top, rgb(245, 246, 247), rgb(225, 228, 232));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#878E98', EndColorStr='#E1E4E8');	
+	/* borde difuminado*/
+	-webkit-box-shadow: inset 0px 1px 0px 0px #C5C8CD;
+	-moz-box-shadow: inset 0px 1px 0px 0px #C5C8CD;
+    box-shadow: inset 0px 1px 0px 0px #C5C8CD;
+	border-bottom: 1px solid #E6E7E8;
+	/* cuadro del menu */
+	height: 2.5em; 
+	position: relative;
+	display: block;
+	width: 100%;
+	/* texto */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	color: #626F7D;	
+	text-indent: 14pt;
+	text-decoration: none;	
+	line-height: 2.75em;
+}
+/* submenus ----------------------------------------- */
+.v_menu li ul{ /* submenus */
+	margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.v_menu li ul li a { /* cada submenu */
+	/* fondo y borde*/
+    background: #fff;
+    border-bottom: 1px solid #efeff0;
+	/* cuadro */
+    width: 100%;
+    height: 3.2em;
+	position: relative;
+    display: block;   
+	/* texto */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+    font-size: 9pt;	
+	font-weight: 400;	
+    color: #878d95;
+	text-indent: 24pt;
+	text-decoration: none;	
+	line-height: 3em;
+}
+/* menus: eventos hover y active ----------------------*/
+.v_menu > li > a:hover, 
+.v_menu > li > a.active {
+    background-color: #E6E7E8; 
+	border-bottom: 1px solid #103c56;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(128, 201, 240)),to(rgb(27,155,224)));
+    background-image: -webkit-linear-gradient(top, rgb(128, 201, 240), rgb(27,155,224));
+    background-image: -moz-linear-gradient(top, rgb(128, 201, 240), rgb(27,155,224));
+    background-image: -o-linear-gradient(top, rgb(128, 201, 240), rgb(27,155,224));
+    background-image: -ms-linear-gradient(top, rgb(128, 201, 240), rgb(27,155,224));
+    background-image: linear-gradient(top, rgb(128, 201, 240), rgb(27,155,224));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#45c7eb', EndColorStr='#2698db');
+	
+    -webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    -moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+	border-bottom: 1px solid #D2E9F7;
+	color: #FFFFFF;
+}
+/* numeros de los menus --------------------------- */
+.v_menu > li > a span {
+    /* fondo y alineacion */
+	background: #DDDFE1; 
+    display: inline-block;	
+	position: absolute;
+    right: 1em;
+    top: 50%;
+	/* dimensiones */
+	height: 14pt;
+	padding: .4em .6em;
+    margin: -.8em 0 0 0;
+	/* borde redondeado y sombra */
+    -webkit-border-radius: .769em;
+    -moz-border-radius: .769em;
+    border-radius: .769em;	
+    -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, .26), 0px 1px 0px 0px rgba(255, 255, 255, .15);
+    -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, .26), 0px 1px 0px 0px rgba(255, 255, 255, .15);
+    box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, .26), 0px 1px 0px 0px rgba(255, 255, 255, .15);
+   
+    /* texto */
+	font-size: 9pt;
+	font-weight: 500;
+	color: #48515C;
+	text-indent: 0;
+    text-align: center;
+	line-height: 7pt;
+}
+.v_menu > li > a:hover span, 
+.v_menu > li > a.active span {
+    background: #2173a1;
+	color: #FFFFFF;
+}
+/* menu: imagenes */
+.v_menu>li>a:before {
+    content: '';
+   /* background-image: url(../images/sprite.png);*/
+    background-repeat: no-repeat;
+    font-size: 36px;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -.5em 0 0 0;
+}
+#menu1 a:before {
+    background-position: 0 0;
+}
+#menu2 a:before {
+    background-position: -38px 0;
+}
+#menu3 a:before {
+    background-position: 0 -38px;
+}
+#menu4 a:before {
+    background-position: -38px -38px;
+}
+#menu5 a:before {
+    background-position: -76px 0;
+}
+/* submenus: numeros */
+.v_menu ul > li > a span {
+	/* fondo y alineacion */
+    display: inline-block;	
+	position: absolute;
+    right: 1em;
+    top: 50%;
+	/* dimensiones */
+	height: 14pt;
+	padding: .4em .6em;
+    margin: -.8em 0 0 0;
+	/* borde redondeado y sombra */
+    -webkit-border-radius: .769em;
+    -moz-border-radius: .769em;
+    border: 1px solid #d0d0d3;
+	border-radius: .769em;	
+    text-shadow: 0px 0px 0px rgba(255,255,255,.01);
+    /* texto */
+	font-size: 9pt;
+	font-weight: 500;
+	color: #878d95;
+	text-indent: 0;
+    text-align: center;
+	line-height: 6pt;
+}
+/* submenus: eventos hover y active ----------------------*/
+.v_menu > li > ul li:hover a,
+.v_menu > li > ul li:hover a span,
+.v_menu > li > ul li:hover a:before {
+	color: #32373D;  
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(215,233,247)),to(rgb(191,223,255)));
+    background-image: -webkit-linear-gradient(top, rgb(215,233,247), rgb(191,223,255));
+    background-image: -moz-linear-gradient(top, rgb(215,233,247), rgb(191,223,255));
+    background-image: -o-linear-gradient(top, rgb(215,233,247), rgb(191,223,255));
+    background-image: -ms-linear-gradient(top, rgb(215,233,247), rgb(191,223,255));
+    background-image: linear-gradient(top, rgb(215,233,247), rgb(191,223,255));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#BFDFFF', EndColorStr='#D7E9F7');
+}

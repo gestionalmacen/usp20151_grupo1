@@ -23,7 +23,7 @@
 		</td>
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
-			<button type="button" onclick="baja('<?php echo $row[0]; ?>');" class="btn btn-primary">Modificar</button>
+			<button type="button" onclick="baja('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de baja</button>
                         <button type="button" onclick="alta('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de alta</button>
 		</td>
 	</tr>

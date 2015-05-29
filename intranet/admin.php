@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['usuario'])){
+
 ?>
 
 
@@ -24,6 +25,14 @@
 	<script src="../js/my_slider.js"></script>
 	<!-- Titulo -->
 	<title>Pagina web</title>
+	
+	<!-- Valida -->
+		<script src="../js/ajax_ui.js"></script>
+	<script src="ui/js/valida.js"></script>
+	<script src="ui/js/valida_operaciones.js"></script>
+	<!-- Acordeon-->
+	<link href="ui/css/mystyles_acordeon.css" rel="stylesheet">	
+
 </head>
 
 <!-------------------------- Cuerpo del documento -------------------->
@@ -47,7 +56,7 @@
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span> 
 		</button>
-		<a class="navbar-brand" href="index.html">Inicio</a>
+		<a class="navbar-brand" href="">Inicio</a>
 	</div>
 	
 	<div class="navbar-collapse collapse">
@@ -78,13 +87,15 @@
 						Nota de Ingreso</a></li>							
 				<?php } ?>
 				<!--Fin-->
-                                <!--Administrador-->
-                                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
+                
+				<!--Administrador-->
+                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
 					<li class="dropdown-header">Grupo de Usuario</li>
 					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'grupo_usuario/grupo_u_reg.php');" style="cursor:pointer">
 						Registrar Nuevo Grupo</a></li>
                                         <li><a href="#" onclick="load_div('contenido', 'grupo_usuario/grupo_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Listar grupos</a></li>
+				</li>
 				<?php } ?>
 				<!--Jefe de Almacen-->
 				<?php if($_SESSION['idgrupo_usuario']==2){ ?>
@@ -126,45 +137,88 @@
 </table>
 
 <!---->
+<table width="890px" align="center">
+
+
+<!---->
+
+<!-- tabla menu vertical, contenido, y modal -->
+
+
 
 <!---->
 
 <table align="center" width="890px">
+
+<td width="201px" rowspan="2" valign="top" bgcolor="#F3F4F4" >
+<div id="v_menu_wrap">
+	<ul id ="v_menu" class="v_menu">
+		
+		<li id="menu1"><a href="#">Grupos Usuarios</a>
+			<ul>
+				<!--Administrador-->
+                <?php if($_SESSION['idgrupo_usuario']==1){ ?>	
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'grupo_usuario/grupo_pre_list.php');" style="cursor:pointer">
+						Listar grupos
+					</a>
+				</li>
+			</ul>
+			<?php } ?>
+		</li>
+
+		<li id="menu2"><a href="#">Usuarios</a>
+			<ul>
+				<!--Administrador-->
+                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
+				<li class="subitem1">			
+					<a href="#" onclick="load_div('contenido', 'forms/man_usuario.php');" style="cursor:pointer">
+						Lista Usuario
+					</a>
+				</li>	
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'forms/reg_usuario.php');" style="cursor:pointer">
+						Actualizar Usuario 
+					</a>
+				</li>
+				
+			</ul>
+			<?php } ?>
+		</li>
+		
+		<li id="menu3"><a href="#">Mantenimiento</a>
+			<ul>
+				<!--Administrador-->
+                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'forms/man_empleado.php');" style="cursor:pointer">
+						Empleado
+					</a>
+				</li>				
+			</ul>
+		</li>
+			</ul>
+			<?php } ?>
+		</li>
+	</ul> 
+</div>
+</td>
+<td align="center" valign="middle" bgcolor="#F8F8F8">	
+	<!-- Contenido -->
+	<div id="contenido">		
+		
+	</div>
+</td>
+</tr>
+
+
+
+
 <!-- Slider -->
 <tr height="360px">
-<TD> <IMG width="125" src="../imagenes/barra.JPG"> </IMG> </TD>
 <td align="center" valign="middle" bgcolor="#F8F8F8">
 	<!-- Contenido: aqui se mostraran los formularios -->
-	<div id="contenido">	
-						<DIV id="micarrusel" class="carousel slide">
-							<DIV class="carousel-inner">
-								<DIV class="item active"> 
-									<IMG src="../imagenes/plantas1.jpg" width="300" height="300" alt="slide 1">
-										<DIV class="carousel-caption">
-											<DIV>
-											</DIV>
-										</DIV>
-								</DIV>
-								<DIV class="item"> 
-										<IMG src="../imagenes/productos.jpg" width="300" height="300" alt="slide 2">
-											<DIV class="carousel-caption">
-												<DIV>
-												</DIV>
-											</DIV>
-								</DIV>
-							</DIV>
-							<a class="left carousel-control" href="#micarrusel" data-slide="prev" ><</a>
-							<a class="right carousel-control" href="#micarrusel" data-slide="next" >></a>
-						</DIV>
-					<br>
-						<DIV class="panel panel-success">
-							<DIV class="panel-heading">Bienvenido</DIV>
-								<DIV class="panel-body">
-									En esta web encontraras ...
-								</DIV>
-						</DIV>
-	</div>
-	<TD align="right"> <IMG width="125" src="../imagenes/barra.JPG"> </IMG> </TD>
+	<div id="contenido"></td>
 </td>
 </tr>
 <!-- Modal dialog -->
@@ -189,32 +243,83 @@
 </tr>                         
 </table>
 
-<table width="890px" align="center">
-
-<!-- Footer -->
-<tr>
-	<td>
-		<footer>
-			<table height="60px" width="890px" class="panel-footer">
-				<tr>
-					<td>
-						<center></center>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<center>Victor Orbegozo Percovich - Henry Sullon Pizarro</center>
-					</td>
-				</tr>
-			</table>
-		</footer>
-	</td>
-</tr>
+<td>	
+	<!-- Modal dialog "#myModal" -->		
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">	
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Sistema Gestion de Almacen</h4>
+			</div>		
+			<center>
+				<div id="modal_body" class="modal-body"></div>
+			</center>	
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>    
+			</div>		  
+		</div>		
+	</div>
+	</div>
+</td>
+</tr>                         
 </table>
 
+<!-- table contenido2 y footer -->
+<table width="890px" align="center">
+<tr>
+<td>
+    <!-- Contenido2 -->
+	<div id="contenido2">
+	<table width="890px" height="10px">
+		<tr>
+			<td>			
+			<div id="div_control_contenido"></div>
+			</td>		
+		</tr>        
+	</table>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+	<!-- Footer -->
+	<footer>
+	<table height="60px" width="890px" class="panel-footer">
+		<tr><td>
+			<center>&copy;&nbsp;USP</center>			
+		</td>
+		</tr>
+	</table>
+    </footer>
+</td>
+</tr>
+</table>
 </body>
 
+<script type="text/javascript">
 
+/* Acordeon */
+$(function() {
+    var menu  = $('.v_menu > li > a'),
+		items = $('.v_menu > li > ul');	
+		
+	items.hide();
+	$('.v_menu > li:nth-child(1) > ul').show();
+	$('.v_menu > li:nth-child(1) > a').addClass('active');
+				
+    menu.click(function(e) {	
+		e.preventDefault();	
+		if (!$(this).hasClass('active')) {
+			items.slideUp();
+			$(this).next().slideToggle();
+			menu.removeClass('active');
+			$(this).addClass('active');
+		}
+    });
+});
+</script>
 </html>
 <?php
 }
