@@ -183,7 +183,7 @@
 					</a>
 				</li>	
 				<li class="subitem1">
-					<a href="#" onclick="load_div('contenido', 'forms/reg_usuario.php');" style="cursor:pointer">
+					<a href="#" onclick="load_div('contenido', 'usuario2/index.php');" style="cursor:pointer">
 						Actualizar Usuario 
 					</a>
 				</li>
