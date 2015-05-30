@@ -4,7 +4,7 @@
 	
 	$idusuario=$_GET['idusuario'];
 	
-	$query="SELECT nombre, clave, estado FROM usuario WHERE idusuario='$idusuario'";
+	$query="SELECT nombre, clave, estado,pregunta_secreta, respuesta FROM usuario WHERE idusuario='$idusuario'";
 	
 	$resultado=$mysqli->query($query);
 	
@@ -35,6 +35,14 @@
 				<tr>
 					<td><b>estado</b></td>
 					<td><input type="text" name="estado" size="25" value="<?php echo $row['estado']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><b>pregunta_secreta</b></td>
+					<td><input type="text" name="pregunta_secreta" size="25" value="<?php echo $row['pregunta_secreta']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><b>respuesta</b></td>
+					<td><input type="text" name="respuesta" size="25" value="<?php echo $row['respuesta']; ?>" /></td>
 				</tr>
 				<tr>
 					<td colspan="2"><center><input type="submit" name="Guardar" value="Guardar" /></center></td>

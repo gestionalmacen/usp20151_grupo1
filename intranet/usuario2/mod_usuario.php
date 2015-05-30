@@ -6,8 +6,9 @@
 	$nombre=$_POST['nombre'];
 	$clave=$_POST['clave'];
 	$estado=$_POST['estado'];
-	
-	$query="UPDATE usuario SET nombre = '$nombre', clave=md5('$clave'), estado='$estado' WHERE idusuario='$idusuario'";
+	$pregunta_secreta=$_POST['pregunta_secreta'];
+	$respuesta=$_POST['respuesta'];	
+	$query="UPDATE usuario SET nombre = '$nombre', clave=md5('$clave'), estado='$estado',pregunta_secreta='$pregunta_secreta', respuesta='$respuesta' WHERE idusuario='$idusuario'";
 
 	$resultado=$mysqli->query($query);
 	
