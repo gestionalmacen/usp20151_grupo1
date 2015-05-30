@@ -13,6 +13,8 @@
                 if($_SESSION['estado']=='A')
                 {
                     $_SESSION['idgrupo_usuario']=$row[3];
+                    $query3="update usuario set fecha_acceso = CURRENT_TIMESTAMP where nombre ='".$usuario."';";
+                    mysql_query($query3,$cnn);
                     $_SESSION['nombre']=$row[2];
                     $_SESSION['usuario']=$usuario;
                     echo "Bienvenido";

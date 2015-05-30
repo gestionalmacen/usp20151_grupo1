@@ -166,14 +166,20 @@
 			</ul>
 			<?php } ?>
 		</li>
+                
 
 		<li id="menu2"><a href="#">Usuarios</a>
 			<ul>
 				<!--Administrador-->
                 <?php if($_SESSION['idgrupo_usuario']==1){ ?>
+                                <li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'usuario/reg_usuario.php');" style="cursor:pointer">
+						Registrar Usuario 
+					</a>
+				</li>
 				<li class="subitem1">			
-					<a href="#" onclick="load_div('contenido', 'forms/man_usuario.php');" style="cursor:pointer">
-						Lista Usuario
+					<a href="#" onclick="load_div('contenido', 'usuario/usuario_pre_listar.php');" style="cursor:pointer">
+						Listar Usuario 
 					</a>
 				</li>	
 				<li class="subitem1">
@@ -196,9 +202,20 @@
 					</a>
 				</li>				
 			</ul>
+                    <?php } ?>
+		</li>
+                <li id="menu4"><a href="#">Personal</a>
+			<ul>
+				<!--Administrador-->
+				<li class="subitem1">
+					<a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'usuario/usuario_mod.php');" style="cursor:pointer">
+						Modificar Cuenta</a>
+				</li>				
+			</ul>
+                    
 		</li>
 			</ul>
-			<?php } ?>
+			
 		</li>
 	</ul> 
 </div>
