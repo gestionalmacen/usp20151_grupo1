@@ -5,9 +5,6 @@
 		$usuario=$_SESSION['usuario'];
                 $idempleado= $_GET['idempleado'];
 		$cnn=conectar();        
-                
-		
-                
 		$query = "select * from grupo_usuario order by nombre_grupo" ;
 		$rsp = mysql_query($query,$cnn);
                 
@@ -27,7 +24,7 @@
 		<td><label>Empleado:</label></td>
 		<td>
                     
-                    <input type="text" value="<?php echo $rowe[0]; ?>" id="txtempleado" class="form-control input-sm">
+                    <input type="text" value="<?php echo $rowe[0]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
                    
 		</td>
                 <td><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'usuario/buscar_empleado.php');" style="cursor:pointer">

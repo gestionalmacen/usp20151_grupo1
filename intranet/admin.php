@@ -182,11 +182,7 @@
 						Listar Usuario 
 					</a>
 				</li>	
-				<li class="subitem1">
-					<a href="#" onclick="load_div('contenido', 'usuario2/index.php');" style="cursor:pointer">
-						Actualizar Usuario 
-					</a>
-				</li>
+				
 				
 			</ul>
 			<?php } ?>
@@ -208,9 +204,10 @@
 			<ul>
 				<!--Administrador-->
 				<li class="subitem1">
-					<a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'usuario/usuario_mod.php');" style="cursor:pointer">
-						Modificar Cuenta</a>
-				</li>				
+					<a href="#" onclick="load_div('contenido', 'usuario2/index.php');" style="cursor:pointer">
+						Actualizar Usuario 
+					</a>
+				</li>			
 			</ul>
                     
 		</li>
