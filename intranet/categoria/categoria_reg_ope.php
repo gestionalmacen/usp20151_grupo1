@@ -2,15 +2,15 @@
         session_start();
 	require_once("../../conexion.php");
 	$cnn = conectar();
-	$grupo = $_POST['grupo'];
-	$query = "call pa_igrupo('$grupo')";
+	$categoria = $_POST['categoria'];
+	$query = "insert into categoria (nombre,estado) values ('$categoria','A')";
 	//$rs = mysql_query ($query,$cnn);
         if( mysql_query($query,$cnn)){
 		//$row = mysql_fetch_array($rs);
                 //$_SESSION['respuesta']=$row[0];
-                echo "Grupo registrado";
+                echo "Categoria registrada";
 	}else{
-		echo "Grupo ya existe";
+		echo "Nombre de la Categoria ya existe";
 	}
 
 

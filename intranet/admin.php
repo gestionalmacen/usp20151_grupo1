@@ -67,15 +67,15 @@
 				<!--Responsable de Almacen-->
 				<?php if($_SESSION['idgrupo_usuario']==3){ ?>
 					<li class="dropdown-header">Productos</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_reg.php');" style="cursor:pointer">
-						Almacen</a></li>              
+					<li><a href="#" onclick="load_div('contenido', 'almacen/almacen_pre_listar.php');" style="cursor:pointer">
+                                                Almacen</a> </li>              
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Apertura y Cierre por Inventario</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Kardex de Producto por mes</a></li>	
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'categoria/categoria_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Categoria</a></li>	
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'subcategoria/subcategoria_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Subcategoria</a></li>
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Catalogo de Productos</a></li>	
@@ -167,6 +167,7 @@
 			<?php } ?>
 		</li>
                 
+                
 
 		<li id="menu2"><a href="#">Usuarios</a>
 			<ul>
@@ -187,6 +188,7 @@
 			</ul>
 			<?php } ?>
 		</li>
+                
 		
 		<li id="menu3"><a href="#">Mantenimiento</a>
 			<ul>
@@ -199,6 +201,8 @@
 				</li>				
 			</ul>
                     <?php } ?>
+                    
+                    
 		</li>
                 <li id="menu4"><a href="#">Personal</a>
 			<ul>
