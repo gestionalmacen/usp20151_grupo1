@@ -2,7 +2,9 @@
 	require_once ("../../conexion.php");
 	$cnn=conectar();
 	$q = $_GET['q'];
-	$query = "select * from producto where nombre like '%$q%' order by nombre" ;
+	$query = "SELECT p.idproducto,p.nombre,p.descripcion,p.precio_compra,s.nombre as 'subcategoria',u.descripcion as 'Unidad Medida',p.fecha_registro,p.estado FROM producto p
+inner join subcategoria  s on p.idsubcategoria=s.idsubcategoria
+inner join unidad_medida u on p.idunidad_medida=u.idunidad_medida where p.nombre like '%$q%' order by p.nombre" ;
 	$rs = mysql_query($query,$cnn);
 ?>
 <center>
@@ -10,11 +12,12 @@
 	<table class="table">
 		<tr bgcolor="green">
 			<td> Nombre </td>
-			<td> Precio </td>
-			<td> Tipo </td>
-			<td> Marca </td>
-			<td> Descripcion </td>
-			
+                        <td> Descripcion </td>
+			<td> Precio </td>			
+			<td> Subcategoria </td>
+			<td> Unidad Medida </td>
+			<td> Fecha Registro </td>
+                        <td> Estado </td>
 		</tr>
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
@@ -24,6 +27,8 @@
 				<td> <?php echo $row[3];?> </td>
 				<td> <?php echo $row[4];?> </td>
 				<td> <?php echo $row[5];?> </td>
+                                <td> <?php echo $row[6];?> </td>
+                                <td> <?php echo $row[7];?> </td>
 				
 			</tr>
 		

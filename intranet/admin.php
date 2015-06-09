@@ -77,7 +77,7 @@
 						Categoria</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'subcategoria/subcategoria_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Subcategoria</a></li>
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Catalogo de Productos</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Proveedores</a></li>

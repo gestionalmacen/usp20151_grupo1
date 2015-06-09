@@ -2,11 +2,11 @@
 	require_once ("../../conexion.php");
 	$cnn=conectar();
 	$nombre = $_POST['nombre'];
-	$precio = $_POST['precio'];
-	$idtipoproducto	= $_POST['idtipoproducto'];
-	$marca	= $_POST['marca'];
-	$descripcion	= $_POST['descripcion'];
-	$query = "insert into producto (nombre, precio,idtipoproducto,marca, descripcion) values ('$nombre',$precio,$idtipoproducto,'$marca','$descripcion')" ;
+	$descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+	$idsubcategoria	= $_POST['idsubcategoria'];
+	$idunidad_medida = $_POST['idunidad_medida'];
+	$query = "insert into producto (nombre,descripcion,precio_compra,idsubcategoria,idunidad_medida,fecha_registro,estado) values ('$nombre','$descripcion',$precio,$idsubcategoria,$idunidad_medida,CURRENT_TIMESTAMP,'A')" ;
 	if( mysql_query($query,$cnn)){
 		echo "OK";
 	}else{
