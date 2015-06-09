@@ -26,3 +26,35 @@
 	</tr>
 </table>
 </form>
+
+<script>
+    function login(){
+  
+var usuario = document.frm_login.txtusuario;
+var clave = document.frm_login.txtclave;
+           if (usuario.value =="")
+	{
+		alert('ingrese usuario');
+		usuario.focus();
+		return;
+	}
+            if (clave.value =="")
+	{
+		alert('ingrese clave');
+		clave.focus();
+		return;
+	} 
+       $.post('login_ope.php', 
+		{	usuario		: usuario.value,		
+			clave 		: clave.value			
+		},
+		function (data){
+			if(data=="Bienvenido"){
+				$(location).attr('href','intranet/admin.php');
+			}else{
+				alert(data);
+			}
+		}
+	);
+}
+</script>

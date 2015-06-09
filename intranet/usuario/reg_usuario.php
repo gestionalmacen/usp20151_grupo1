@@ -32,7 +32,7 @@
 	</tr>
 	<tr height="45">
 		<td width="100px"><label>Usuario:</label></td>
-		<td><input type="text" id="txtusuario" class="form-control input-sm" placeholder="Ingrese nombre de usuario"></td>
+                <td><input type="text" onkeypress="txNombres()" id="txtusuario" class="form-control input-sm" placeholder="Ingrese nombre de usuario"></td>
 	</tr>
 	<tr height="45">
 		<td><label>Clave:</label></td>
@@ -74,11 +74,16 @@
 </form>
 
 <script>
+        function txNombres() {
+        if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+        event.returnValue = false;
+        }
     function usuario_ope(idempleado){
 	var usuario		= document.frm_usuario_reg.txtusuario;	
 	var clave 		= document.frm_usuario_reg.txtclave;
 	var pregunta		= document.frm_usuario_reg.txtpregunta;
 	var respuesta           = document.frm_usuario_reg.txtrespuesta;
+        
         $.post('usuario/reg_usuario_ope.php', 
 		{	usuario		: usuario.value,		
 			clave 		: clave.value,

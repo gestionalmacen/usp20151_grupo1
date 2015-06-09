@@ -21,14 +21,14 @@ inner join unidad_medida u on p.idunidad_medida=u.idunidad_medida where p.nombre
 		</tr>
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
-				<td> <a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_pre_modificar.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
+				<td> <a data-toggle="modal" data-target="#myModal"  onclick="load_div('modal_body', 'producto/producto_pre_modificar.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
 				<?php echo $row[1];?></a> </td>
 				<td> <?php echo $row[2];?> </td>
 				<td> <?php echo $row[3];?> </td>
 				<td> <?php echo $row[4];?> </td>
 				<td> <?php echo $row[5];?> </td>
                                 <td> <?php echo $row[6];?> </td>
-                                <td> <?php echo $row[7];?> </td>
+                                <td> <?php if($row[7]=='A') {echo 'Apto';} else {echo 'No Apto';} ;?> </td>
 				
 			</tr>
 		

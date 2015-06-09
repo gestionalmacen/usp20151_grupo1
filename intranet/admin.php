@@ -126,6 +126,8 @@
 			</li>
 			<?php } ?>	
 		</ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a><b>Usuario: <?php echo $_SESSION['usuario'];?></b></a></li>
 		<ul class="nav navbar-nav navbar-right">
 		<li><a href="../salir.php"> Salir</a></li>	
 		</ul>
