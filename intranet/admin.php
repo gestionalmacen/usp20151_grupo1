@@ -325,7 +325,8 @@
 </body>
 
 <script type="text/javascript">
-
+/* mostrar el formulario de bienvenido, al pasar el login */
+load_div('contenido', 'forms/bienvenido.php');
 /* Acordeon */
 $(function() {
     var menu  = $('.v_menu > li > a'),
