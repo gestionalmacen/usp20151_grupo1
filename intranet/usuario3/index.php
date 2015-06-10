@@ -1,7 +1,7 @@
 <?php
 	require('conexion.php');
 	
-	$query="SELECT idusuario, nombre,case estado when 'A' then 'Activo' when 'B' then 'Inactivo' end as estado,pregunta_secreta, respuesta FROM usuario"; 
+	$query="SELECT idusuario, nombre,case estado when 'A' then 'Activo' when 'B' then 'Inactivo' end as estado,pregunta_secreta, respuesta FROM usuario where idusuario=1"; 
 	
 	$resultado=$mysqli->query($query);
 	
@@ -25,6 +25,7 @@
 					<td><b>Estado</b></td>
 					<td><b>Pregunta</b></td>
 					<td><b>Respuesta</b></td>
+					<td></td>
 				</tr>
 				<tbody>
 					<?php while($row=$resultado->fetch_assoc()){ ?>
@@ -40,6 +41,13 @@
 							<td>
 								<?php echo $row['respuesta'];?>
 							</td>						
+							<td>
+<a href="#" onclick="load_div('contenido', 'usuario2/modificar.php?idusuario=<?php echo $row['idusuario'];?>');" style="cursor:pointer">
+Actualizar Usuario </a>
+
+					</a>
+							</td>
+
 						</tr>
 					<?php } ?>
 				</tbody>
