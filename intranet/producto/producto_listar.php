@@ -10,14 +10,14 @@ inner join unidad_medida u on p.idunidad_medida=u.idunidad_medida where p.nombre
 <center>
 	<p class="form-title"> Lista Producto </p>
 	<table class="table">
-		<tr bgcolor="green">
-			<td> Nombre </td>
-                        <td> Descripcion </td>
-			<td> Precio </td>			
-			<td> Subcategoria </td>
-			<td> Unidad Medida </td>
-			<td> Fecha Registro </td>
-                        <td> Estado </td>
+		<tr bgcolor="lightblue">
+			<td><b> Nombre </b></td>
+                        <td><b> Descripcion </b></td>
+			<td><b> Precio </b></td>			
+			<td><b> Subcategoria </b></td>
+			<td><b> Unidad Medida </b></td>
+			<td><b> Fecha Registro </b></td>
+                        <td><b> Estado </b></td>
 		</tr>
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>

@@ -9,9 +9,9 @@
 	<p class="form-title"> Lista de Almacen </p>
         
 	<table class="table">
-		<tr>
-                       <td> Nombre de Almacen </td>
-                       <td> Estado </td>
+		<tr bgcolor="lightblue">
+                    <td><b> Nombre de Almacen </b></td>
+                       <td><b> Estado </b></td>
                        
                       
 			

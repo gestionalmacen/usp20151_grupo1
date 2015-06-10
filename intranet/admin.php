@@ -79,7 +79,7 @@
 						Subcategoria</a></li>
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Catalogo de Productos</a></li>	
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'proveedor/proveedor_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Proveedores</a></li>
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Nota de Salida</a></li>	
@@ -151,7 +151,7 @@
 <!---->
 
 <table align="center" width="890px">
-
+<?php if($_SESSION['idgrupo_usuario']==1){ ?>
 <td width="201px" rowspan="2" valign="top" bgcolor="#F3F4F4" >
 <div id="v_menu_wrap">
 	<ul id ="v_menu" class="v_menu">
@@ -223,6 +223,7 @@
 	</ul> 
 </div>
 </td>
+<?php } ?>
 <td align="center" valign="middle" bgcolor="#F8F8F8">	
 	<!-- Contenido -->
 	<div id="contenido">		
