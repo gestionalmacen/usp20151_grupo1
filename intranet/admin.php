@@ -206,7 +206,7 @@
                     
                     
 		</li>
-                <li id="menu4"><a href="#">Personal</a>
+        <li id="menu4"><a href="#">Personal</a>
 			<ul>
 				<!--Administrador-->
 				<li class="subitem1">
@@ -222,6 +222,15 @@
 			</ul>
                     
 		</li>
+		
+	    <li id="menu4"><a href="#">Reportes</a>
+			<ul>						
+				<li class="subitem1">
+					<a href="reports/rep_alm_inv.php" target="_blank">Almacen por Inventario</a>					
+				</li>		
+				<li class="subitem1">
+					<a href="reports/proveedores_rep.php" target="_blank">Proveedores</a>					
+				</li>			
 			</ul>
 			
 		</li>
