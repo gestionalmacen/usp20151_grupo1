@@ -97,10 +97,16 @@
 		}
 	);
 }
+	function select(id, nombre) {
+		$('#idempleado').val(id);
+		$('#txtPersona').val(nombre);
+		$('#modalwindow').fadeOut(200);
+	}
 </script>
 
 
 <?php 
+
 	}else{	
 		echo "<script language=javascript>
             location.href='../index.html';

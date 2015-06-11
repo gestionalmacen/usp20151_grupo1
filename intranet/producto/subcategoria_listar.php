@@ -19,7 +19,7 @@
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
                               
-				<td> <a data-toggle="modal" data-target="#myModal" onclick="load_div('contenido', 'producto/producto_reg.php?idsubcategoria=<?php echo $row[0];?>');" style="cursor:pointer">
+				<td> <a  data-dismiss="modal" data-target="#myModal" onclick="load_div('contenido', 'producto/producto_reg.php?idsubcategoria=<?php echo $row[0];?>');" style="cursor:pointer">
 						<?php echo $row[1];?></a> </td>
                                 <td> <?php echo $row[2]?> </td>
                                 
