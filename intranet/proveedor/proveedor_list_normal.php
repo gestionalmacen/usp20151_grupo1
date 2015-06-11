@@ -18,7 +18,7 @@
 		</tr>
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
-				<td> <a data-toggle="modal" data-target="#myModal"  onclick="load_div('modal_body', 'producto/producto_pre_modificar.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
+				<td> <a data-toggle="modal" data-target="#myModal"  onclick="load_div('modal_body', 'proveedor/proveedor_categoria_reg.php?idproveedor=<?php echo $row[0];?>');" style="cursor:pointer">
 				<?php echo $row[1];?></a> </td>
 				<td> <?php echo $row[2];?> </td>
 				<td> <?php echo $row[3];?> </td>
