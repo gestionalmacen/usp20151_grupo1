@@ -110,17 +110,17 @@
 			<li class="dropdown"> 
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Reporte <b class="caret"></b></a>
 				<ul class="dropdown-menu">	
-					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
 						Movimiento por Oficina por Mes</a></li>
-					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
 						Movimiento por producto por periodo por mes</a></li>
-					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
 						Catalogo por almacen</a></li>
-					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+					<li><a href="reporte/rep_alm_inv.php" target="_blank"  onclick="reporte('reporte/rep_alm_inv.php');" style="cursor:pointer">
 						Inventario por almacen</a></li>
-					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
 						Solicitud de bienes</a></li>
-					<li><a href="reporte/dlglistaventa.php" target="_blank"  onclick="reporte('reporte/dlglistaventa.php');" style="cursor:pointer">
+					<li><a href="" target="_blank"  onclick="reporte('');" style="cursor:pointer">
 						Adquisición de productos a proveedor por periodo y mes</a></li>
 				</ul>			
 			</li>
@@ -138,28 +138,18 @@
 </tr>
 </table>
 
-<!---->
 <table width="890px" align="center">
-
-
-<!---->
-
 <!-- tabla menu vertical, contenido, y modal -->
-
-
-
-<!---->
-
 <table align="center" width="890px">
-<?php if($_SESSION['idgrupo_usuario']==1){ ?>
 <td width="201px" rowspan="2" valign="top" bgcolor="#F3F4F4" >
 <div id="v_menu_wrap">
+<!-- -->
 	<ul id ="v_menu" class="v_menu">
-		
+		<?php if($_SESSION['idgrupo_usuario']==1){ ?>
 		<li id="menu1"><a href="#">Grupos Usuarios</a>
 			<ul>
 				<!--Administrador-->
-                <?php if($_SESSION['idgrupo_usuario']==1){ ?>	
+            <?php if($_SESSION['idgrupo_usuario']==1){ ?>	
 				<li class="subitem1">
 					<a href="#" onclick="load_div('contenido', 'grupo_usuario/grupo_pre_list.php');" style="cursor:pointer">
 						Listar grupos
@@ -167,15 +157,12 @@
 				</li>
 			</ul>
 			<?php } ?>
-		</li>
-                
-                
-
+		</li>                
+        <?php if($_SESSION['idgrupo_usuario']==1){ ?>
 		<li id="menu2"><a href="#">Usuarios</a>
 			<ul>
 				<!--Administrador-->
-                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
-                                <li class="subitem1">
+                <li class="subitem1">
 					<a href="#" onclick="load_div('contenido', 'usuario/reg_usuario.php');" style="cursor:pointer">
 						Registrar Usuario 
 					</a>
@@ -185,13 +172,9 @@
 						Listar Usuario 
 					</a>
 				</li>	
-				
-				
 			</ul>
 			<?php } ?>
 		</li>
-                
-		
 		<li id="menu3"><a href="#">Mantenimiento</a>
 			<ul>
 				<!--Administrador-->
@@ -219,25 +202,28 @@
 						Cambiar Contraseña
 					</a>
 				</li>			
-			</ul>
-                    
+			</ul>                   
 		</li>
-		
+		<?php } ?>	
+		<?php if($_SESSION['idgrupo_usuario']==3){ ?>	
 	    <li id="menu4"><a href="#">Reportes</a>
 			<ul>						
+			<?php if($_SESSION['idgrupo_usuario']==3){ ?>	
 				<li class="subitem1">
-					<a href="reports/rep_alm_inv.php" target="_blank">Almacen por Inventario</a>					
+					<a href="reporte/rep_alm_inv.php" target="_blank">Almacen por Inventario</a>					
 				</li>		
 				<li class="subitem1">
-					<a href="reports/proveedores_rep.php" target="_blank">Proveedores</a>					
-				</li>			
-			</ul>
-			
+					<a href="reporte/proveedores_rep.php" target="_blank">Proveedores</a>					
+				</li>	
+			<?php } ?>	
+			</ul>	
 		</li>
+		<?php } ?>	
 	</ul> 
+<!-- -->
 </div>
 </td>
-<?php } ?>
+
 <td align="center" valign="middle" bgcolor="#F8F8F8">	
 	<!-- Contenido -->
 	<div id="contenido">		
