@@ -213,8 +213,14 @@
 					<a href="reporte/rep_alm_inv.php" target="_blank">Almacen por Inventario</a>					
 				</li>		
 				<li class="subitem1">
+					<a href="reporte/rep_mov_ofi.php" target="_blank">Movimiento por Oficina</a>					
+				</li>
+				<li class="subitem1">
+					<a href="reporte/rep_cat_alm.php" target="_blank">Catalago por Almacen</a>					
+				</li>
+				<li class="subitem1">
 					<a href="reporte/proveedores_rep.php" target="_blank">Proveedores</a>					
-				</li>	
+				</li>				
 			<?php } ?>	
 			</ul>	
 		</li>
