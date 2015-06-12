@@ -6,7 +6,7 @@ class PDF extends FPDF
 	function ImprovedTable($header, $data)	
 	{
 		// Anchuras de las columnas
-		$w = array(10, 32, 30, 63,10,10,10,18);		
+		$w = array(10, 32, 30, 63,10,10,10);		
 		// Colores, ancho de línea y fuente en negrita
 		$this->SetFillColor(79,129,189);
 		$this->SetTextColor(255);
@@ -29,8 +29,7 @@ class PDF extends FPDF
 			$this->Cell($w[3],6,$row[3],'LR');
 			$this->Cell($w[4],6,$row[4],'LR');
 			$this->Cell($w[5],6,$row[5],'LR');
-			$this->Cell($w[6],6,$row[6],'LR');			
-			$this->Cell($w[7],6,$row[7],'LR',0,'R');
+			$this->Cell($w[6],6,$row[6],'LR',0,'R');
 			$this->Ln();
 		}
 		// Línea de cierre
@@ -45,8 +44,7 @@ a.nombre as 'area',
 p.nombre as 'producto',
 ds.cantidad_solicitada,
 ds.cantidad_entregada,
-ds.saldo as 'saldo',
-case s.estado when 'E' then 'Entregado' when 'P' then 'Pendiente' end as 'estado'
+ds.saldo as 'saldo'
 FROM
 area a
 INNER JOIN solicitud s
@@ -56,7 +54,7 @@ ON s.idsolicitud = ds.idsolicitud
 INNER JOIN producto p
 ON ds.idproducto = p.idproducto
 ORDER BY s.fecha DESC");
-$header = array('Nº', 'Fecha Solicitud', 'Area', 'Producto','C.Sol', 'C.Entr','Saldo','Estado');
+$header = array('Nº', 'Fecha Solicitud', 'Area', 'Producto','C.Sol', 'C.Entr','Saldo');
 $i = 0;
 while($row = mysqli_fetch_array($rs)){
 	$data[$i] = array(($i + 1),
@@ -65,8 +63,7 @@ while($row = mysqli_fetch_array($rs)){
 				utf8_decode($row['producto']),
 				utf8_decode($row['cantidad_solicitada']),
 				utf8_decode($row['cantidad_entregada']),
-				utf8_decode($row['saldo']),
-				utf8_decode( $row['estado']));
+				utf8_decode($row['saldo']));
 	$i++;
 }
 //Hora Peruana
