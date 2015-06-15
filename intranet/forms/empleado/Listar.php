@@ -1,6 +1,6 @@
 <?php
 	/* Usado en [forms/resultado/buscar_empleado.php] */
-	require_once("../../capadatos/EmpleadoDAL.php");
+	require_once("../../forms/EmpleadoDAL.php");
 	$empleadoDAL = new EmpleadoDAL();
 	$n = $_GET['n'];
 	$s = $_GET['s'];

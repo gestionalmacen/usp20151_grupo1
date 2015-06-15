@@ -193,12 +193,17 @@
 			<ul>
 				<!--Administrador-->
 				<li class="subitem1">
-					<a href="#" onclick="load_div('contenido', 'usuario2/index.php');" style="cursor:pointer">
+					<a href="#" onclick="load_div('contenido', 'usuario/usuarios.php');" style="cursor:pointer">
 						Lista de Usuario
 					</a>
-                                </li>
-                                <li class="subitem1">
-                                    	<a href="#" onclick="load_div('contenido', 'usuario3/index.php');" style="cursor:pointer">
+                </li>
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'usuario2/man_usuarios.php');" style="cursor:pointer">
+						Lista de Usuarios
+					</a>
+                </li>
+                <li class="subitem1">
+                        <a href="#" onclick="load_div('contenido', 'usuario3/index.php');" style="cursor:pointer">
 						Cambiar Contraseña
 					</a>
 				</li>			
@@ -327,7 +332,7 @@
 
 <script type="text/javascript">
 /* mostrar el formulario de bienvenido, al pasar el login */
-load_div('contenido', 'forms/bienvenido.php');
+load_div('contenido', 'bienvenido/bienvenido.php');
 /* Acordeon */
 $(function() {
     var menu  = $('.v_menu > li > a'),
