@@ -1,6 +1,6 @@
 <?php
 require('fpdf/fpdf.php');	
-require_once("../capadatos/clases/MySql.php");
+require_once("../conexion/MySql.php");
 class PDF extends FPDF
 {
 	function ImprovedTable($header, $data)	
