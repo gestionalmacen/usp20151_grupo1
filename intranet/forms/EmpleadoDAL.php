@@ -1,5 +1,5 @@
 <?php
-require_once("clases/MySql.php");
+require_once("../../conexion/MySql.php");
 class EmpleadoDAL{
 
 	// Usado en:

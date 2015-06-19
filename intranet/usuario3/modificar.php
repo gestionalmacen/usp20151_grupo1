@@ -20,7 +20,7 @@
 		
 		<center><h1>Modificar Usuario</h1></center>
 		
-		<form name="modificar_usuario" method="POST" action="usuario2/mod_usuario.php">
+		<form name="modificar_usuario" method="POST" action="usuario3/mod_usuario.php">
 		
 			<table width="50%">
 				<tr>
