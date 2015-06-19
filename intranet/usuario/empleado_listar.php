@@ -2,7 +2,8 @@
 	require_once ("../../conexion.php");
 	$cnn=conectar();
 	$q = $_GET['q'];
-	$query = "select * from v_bempleado v where v.nombres like '%$q%'" ;
+	$query = "select e.idempleado AS 'idempleado',concat(e.primer_nombre,' ',e.segundo_nombre) AS 'Nombres',concat(e.apellido_paterno,' ',e.apellido_materno) AS 'Apellidos',a.nombre AS 'Area' 
+        from empleado e  inner join area a on e.idarea=a.idarea where e.primer_nombre like '%$q%'" ;
 	$rs = mysql_query($query,$cnn);
 ?>
 <center>

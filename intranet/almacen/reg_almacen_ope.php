@@ -3,7 +3,7 @@
 	require_once("../../conexion.php");
 	$cnn = conectar();
 	$almacen = $_POST['almacen'];
-	$query = "call pa_ialmacen('$almacen','A')";
+        $query= "insert into almacen(nombre,estado) values('$almacen','A')";
 	//$rs = mysql_query ($query,$cnn);
         if( mysql_query($query,$cnn)){
 		//$row = mysql_fetch_array($rs);

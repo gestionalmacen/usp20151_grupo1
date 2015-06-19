@@ -37,7 +37,7 @@
     
     <table align="center" class="table">
         <tr>
-            <td>
+            <td align="center">
                 <div class="input-prepend input-append">
 		<span class="add-on"> Buscar Proveedor</span>
 		<input class="span3" id="txtbuscarproveedor" placeholder="Ingrese proveedor" type="text">

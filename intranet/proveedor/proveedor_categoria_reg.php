@@ -44,7 +44,7 @@
     <table align="center" class="table">
         <tr>
             <td>
-	<div id="subcontenido">
+	<div id="categoria">
 	</div>
             </td>
         </tr> 
@@ -65,7 +65,11 @@
 		},
 		function (data){
                     alert(data);
+                    mostrar_categoria();
 		}
 	);
     }
+    function mostrar_categoria(){
+	load_div("categoria","proveedor/categoria_list.php");
+}
 </script>

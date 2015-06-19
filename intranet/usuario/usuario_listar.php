@@ -2,7 +2,9 @@
 	require_once ("../../conexion.php");
 	$cnn=conectar();
 	$q = $_GET['q'];
-	$query = "SELECT * FROM v_usuario v WHERE v.Login like '%$q%' order by v.Login" ;
+	$query = "SELECT u.idusuario AS 'idusuario',u.nombre AS 'Login',concat(e.primer_nombre,' ',e.segundo_nombre) AS 'Nombres',g.nombre_grupo AS 'nombre_grupo',u.fecha_acceso AS 'fecha_acceso',u.ip_acceso AS 'ip_acceso',u.fecha_alta AS 'fecha_alta',u.fecha_registro AS 'Fecha Vigencia' 
+        FROM usuario u inner join empleado e on u.idempleado=e.idempleado
+        inner join grupo_usuario g on u.idgrupo_usuario=g.idgrupo_usuario WHERE u.nombre like '%$q%' order by u.nombre" ;
 	$rs = mysql_query($query,$cnn);
 ?>
 <center>
