@@ -4,7 +4,7 @@
 	$cnn = conectar();
 	$usuario = $_POST['usuario'];
 	$clave = $_POST['clave'];
-	$query = "SELECT concat(e.primer_nombre,' ',e.apellido_paterno) AS 'Nombre y Apellido',u.nombre AS 'nombre',u.clave AS 'clave',u.idgrupo_usuario AS 'idgrupo_usuario',u.estado AS estado
+	$query = "SELECT concat(e.primer_nombre,' ',e.apellido_paterno) AS 'Nombre y Apellido',u.nombre AS 'nombre',u.clave AS 'clave',u.idgrupo_usuario AS 'idgrupo_usuario',u.estado AS estado, u.idusuario
         FROM usuario u inner join empleado e on u.idempleado=e.idempleado 
         inner join grupo_usuario g on u.idgrupo_usuario=g.idgrupo_usuario where u.nombre = '$usuario' and u.clave = md5('$clave') ;";
 	$rs = mysql_query ($query,$cnn);
@@ -19,6 +19,7 @@
                     mysql_query($query3,$cnn);
                     $_SESSION['nombre']=$row[2];
                     $_SESSION['usuario']=$usuario;
+                    $_SESSION['idusuario']=$row[5];
                     echo "Bienvenido";
                 }
                 else

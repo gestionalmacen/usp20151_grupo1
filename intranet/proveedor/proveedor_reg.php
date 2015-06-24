@@ -1,3 +1,16 @@
+<?php
+	session_start();
+	require_once ("../../conexion.php");
+	if(isset($_SESSION['usuario'])){
+		$usuario=$_SESSION['usuario'];
+		$cnn=conectar();     
+                
+		$query = "select * from categoria order by nombre" ;
+		$rsp = mysql_query($query,$cnn);
+                
+
+	
+?>
 <form id="frm_proveedor_reg" name="frm_proveedor_reg" class="form-vertical">
 <table width="400">
 	<tr>
@@ -33,22 +46,27 @@
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
 			<button type="button" onclick="proveedor_ope();" class="btn btn-primary">Guardar</button>
 		</td>
+                
+        <tr height="45">
+		<td><label>Categoria:</label></td>
+		<td>
+		<select name="idcategoria" id="idcategoria" size="1">
+		<option value="0" > Seleccione Categoria </option>
+		<?php while($rowc = mysql_fetch_array($rsp)){ ?>
+		<option value="<?php echo $rowc[0]; ?>"> <?php echo $rowc[1]; ?> </option>
+		<?php } ?>
+		</select>
+		</td>		
+	</tr>
+                <td>
+		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
+			<button type="button" onclick="deta_cate_prove('<?php echo $rowc[0];?>');" class="btn btn-primary">Guardar</button>
+		</td>
 </table>
     
-    <table align="center" class="table">
-        <tr>
-            <td align="center">
-                <div class="input-prepend input-append">
-		<span class="add-on"> Buscar Proveedor</span>
-		<input class="span3" id="txtbuscarproveedor" placeholder="Ingrese proveedor" type="text">
-		<!--<a  onclick="load_div('contenido', 'proveedor/proveedor_reg.php');" style="cursor:pointer">
-						Registrar Proveedor</a>-->
+	<div id="categoria_proveedor">
 	</div>
-	<div id="subcontenido">
-	</div>
-            </td>
-        </tr> 
-    </table>
+            
 </form>
 <script>
     
@@ -103,11 +121,30 @@
 		}
 	);      
     }
-    $("#txtbuscarproveedor").keyup(
-	function(event ){
-		//alert($("#txtbuscarproducto").val());
-		load_div("subcontenido","proveedor/proveedor_list_normal.php?q="+$("#txtbuscarproveedor").val());
+    function deta_cate_prove()
+    {
+        if (idcategoria.value==0)
+	{
+		alert('seleccione una categoria');
+		return;
 	}
+        $.post('proveedor/detalle_proveedor_categoria.php', 
+		{			
+                        idcategoria     : idcategoria.value
+		},
+		function (data){
+                    alert(data);
+                    categoria_proveedor();
+		}
 	);
+    }
+
+	function categoria_proveedor()
+            {
+		load_div("categoria_proveedor","proveedor/categoria_list.php");
+            }
 </script>
 
+<?php
+        }
+?>

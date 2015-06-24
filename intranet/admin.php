@@ -100,7 +100,7 @@
 				<!--Jefe de Almacen-->
 				<?php if($_SESSION['idgrupo_usuario']==2){ ?>
 					<li class="dropdown-header">Registro de Solicitud</li>
-					<li><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'producto/producto_reg.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'solicitud/solicitud_reg.php');" style="cursor:pointer">
 						Producto por oficina</a></li>              
 				<?php } ?>	
 				<!--Fin-->				

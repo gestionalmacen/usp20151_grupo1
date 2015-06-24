@@ -1,7 +1,7 @@
 <?php
 	require_once ("../../conexion.php");
 	$cnn=conectar();
-	$idproveedor= $_GET['idproveedor'];
+	$idproveedor = $_GET['idproveedor'];
 	$query = "select * from proveedor where idproveedor=$idproveedor" ;
 	$rs = mysql_query($query,$cnn);
 	$row = mysql_fetch_array($rs);
@@ -41,14 +41,10 @@
 		</td>
 	</tr>
 </table>
-    <table align="center" class="table">
-        <tr>
-            <td>
+
 	<div id="categoria">
 	</div>
-            </td>
-        </tr> 
-    </table>
+
 </form>
 <script>
     function agregar_categoria(idproveedor)
@@ -70,6 +66,7 @@
 	);
     }
     function mostrar_categoria(){
-	load_div("categoria","proveedor/categoria_list.php");
+    load_div("categoria","proveedor/categoria_list_mod.php");
+	
 }
 </script>
