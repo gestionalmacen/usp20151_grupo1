@@ -60,7 +60,7 @@
 	</tr>
                 <td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
-			<button type="button" onclick="deta_cate_prove('<?php echo $rowc[0];?>');" class="btn btn-primary">Guardar</button>
+			<button type="button" onclick="deta_cate_prove();" class="btn btn-primary">Guardar</button>
 		</td>
 </table>
     

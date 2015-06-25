@@ -1,7 +1,7 @@
 <?php
 	require_once ("../../conexion.php");
 	$cnn=conectar();
-        $idproveedor = $_POST['idproveedor'];
+        $idproveedor = $_GET['idproveedor'];
 	$query = "select p.nombre as 'proveedor',c.nombre as 'categoria',p.idproveedor from detalle_categoria_proveedor d 
         inner join proveedor p on d.idproveedor = p.idproveedor 
         inner join categoria c on d.idcategoria = c.idcategoria where p.idproveedor=$idproveedor" ;

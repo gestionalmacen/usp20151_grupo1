@@ -9,6 +9,12 @@
         $query = "select * from categoria order by nombre" ;
 	$rsc = mysql_query($query,$cnn);
 	
+        $queryp = "select p.nombre as 'proveedor',c.nombre as 'categoria',p.idproveedor from detalle_categoria_proveedor d 
+        inner join proveedor p on d.idproveedor = p.idproveedor 
+        inner join categoria c on d.idcategoria = c.idcategoria where p.idproveedor=$idproveedor" ;
+	$rsp = mysql_query($queryp,$cnn);
+        $num_registros = is_resource($rsp) ? mysql_num_rows($rsp) : 0;
+	if($num_registros>0){
 ?>
 <form id="frm_proveedor_categoria_reg" name="frm_proveedor_categoria_reg" class="form-vertical">
 <table width="373">
@@ -41,14 +47,27 @@
 		</td>
 	</tr>
 </table>
-
-	<div id="categoria">
-	</div>
-
+    <div>
+	<p class="form-title"> Lista de Detalle entre Proveedor y Categoria </p>
+        <table id="tabla" class="table">
+		<tr bgcolor="lightblue">
+			<td> Nombre de Proveedor </td>
+			<td> Categoria </td>
+		</tr>
+		<?php while($rowp = mysql_fetch_array($rsp)){ ?>
+			<tr>
+				<td> <?php echo $rowp[0];?> </td>
+				<td> <?php echo $rowp[1];?> </td>
+			</tr>
+		
+		<?php }?>
+	</table>
+    </div>
 </form>
 <script>
     function agregar_categoria(idproveedor)
     {
+        
         if (idcategoria.value==0)
 	{
 		alert('seleccione una categoria');
@@ -61,7 +80,6 @@
 		},
 		function (data){
                     alert(data);
-                    mostrar_categoria();
 		}
 	);
     }
@@ -70,3 +88,7 @@
 	
 }
 </script>
+
+<?php 
+}						
+ ?>
