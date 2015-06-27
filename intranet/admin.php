@@ -60,10 +60,29 @@
 	</div>
 	
 	<div class="navbar-collapse collapse">
-		<ul class="nav navbar-nav">			
+		<ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Web Service <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <?php if($_SESSION['idgrupo_usuario']==3){ ?>
+                                <li class="dropdown-header">Web Service </li>
+                                    <li><a href="#" onclick="load_div('contenido', 'web_service/obtener_estado_almacen.php');" style="cursor:pointer">
+                                                Obtener estado de Almacen</a> </li>
+                                    <li><a href="#" onclick="load_div('contenido', 'web_service/obtener_estado_proveedor.php');" style="cursor:pointer">
+                                                Obtener estado de Proveedor</a> </li>
+                                    <li><a href="#" onclick="load_div('contenido', 'web_service/obtener_estado_empleado.php');" style="cursor:pointer">
+                                                Obtener estado de Empleado</a> </li>
+                                    <li><a href="#" onclick="load_div('contenido', 'web_service/obtener_estado_usuario.php');" style="cursor:pointer">
+                                                Obtener estado de Usuario</a> </li>
+                                                 
+                            <?php } ?>
+                        </ul>
+                    </li>
+                                      
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Mantenedores <b class="caret"></b></a>
 				<ul class="dropdown-menu">
+                                             
 				<!--Responsable de Almacen-->
 				<?php if($_SESSION['idgrupo_usuario']==3){ ?>
 					<li class="dropdown-header">Productos</li>

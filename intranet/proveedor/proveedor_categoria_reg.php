@@ -47,7 +47,7 @@
 		</td>
 	</tr>
 </table>
-    <div>
+    <div id="cat_pro">
 	<p class="form-title"> Lista de Detalle entre Proveedor y Categoria </p>
         <table id="tabla" class="table">
 		<tr bgcolor="lightblue">
@@ -84,7 +84,7 @@
 	);
     }
     function mostrar_categoria(){
-    load_div("categoria","proveedor/categoria_list_mod.php");
+    load_div("cat_pro","proveedor/categoria_list_mod.php");
 	
 }
 </script>
