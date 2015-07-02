@@ -3,7 +3,8 @@
 	require_once ("../../conexion.php");
 	if(isset($_SESSION['usuario'])){
 		$usuario=$_SESSION['usuario'];
-		$cnn=conectar();     
+		$cnn=conectar();
+                error_reporting(0);
                 $idproducto =$_GET['idproducto'];
                 
 		$query = "select * from area order by nombre" ;

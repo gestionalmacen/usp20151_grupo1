@@ -3,8 +3,10 @@
 	require_once ("../../conexion.php");
 	if(isset($_SESSION['usuario'])){
 		$usuario=$_SESSION['usuario'];
+                
+		$cnn=conectar();
+                error_reporting(0);
                 $idempleado= $_GET['idempleado'];
-		$cnn=conectar();        
 		$query = "select * from grupo_usuario order by nombre_grupo" ;
 		$rsp = mysql_query($query,$cnn);
                 
@@ -83,7 +85,29 @@
 	var clave 		= document.frm_usuario_reg.txtclave;
 	var pregunta		= document.frm_usuario_reg.txtpregunta;
 	var respuesta           = document.frm_usuario_reg.txtrespuesta;
-        
+        if (usuario.value =="")
+	{
+		alert('Ingrese Usuario');
+		usuario.focus();
+		return;
+	}
+	if (clave.value=="")
+	{
+		alert('Ingrese Clave');
+		clave.focus();
+		return;
+	}
+	if (pregunta.value =="")
+	{
+		alert('Ingrese pregunta');
+		pregunta.focus();
+		return;
+	}
+        if (idgrupo_usuario.value ==0)
+	{
+		alert('Escoga un grupo');
+		return;
+	}
         $.post('usuario/reg_usuario_ope.php', 
 		{	usuario		: usuario.value,		
 			clave 		: clave.value,
@@ -93,7 +117,7 @@
 			respuesta	: respuesta.value
 		},
 		function (data){
-			alert('Usuario Registrado correctamente');
+			alert(data);
 		}
 	);
 }

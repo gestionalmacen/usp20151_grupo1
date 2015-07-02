@@ -51,13 +51,13 @@
       {
           var subcategoria = document.frm_subcategoria.txtsubcategoria;
           
-          if (subcategoria.value =="")
+        if (subcategoria.value =="")
 	{
 		alert('ingrese subcategoria');
 		subcategoria.focus();
 		return;
 	}
-        	if (idcategoria.value==0)
+        if (idcategoria.value==0)
 	{
 		alert('seleccione una categoria');
 		return;
@@ -67,7 +67,7 @@
 			idcategoria : idcategoria.value
 		},
 		function (data){
-			alert('Subcategoria ingresado correctamente');
+			alert(data);
 		}
 	);
       }

@@ -3,9 +3,9 @@
 	require_once ("../../conexion.php");
 	if(isset($_SESSION['usuario'])){
 		$usuario=$_SESSION['usuario'];
-                $idsubcategoria= $_GET['idsubcategoria'];
+                error_reporting(0);
 		$cnn=conectar();
-                
+                $idsubcategoria= $_GET['idsubcategoria'];
 		$query = "select * from producto order by nombre" ;
 		$rs = mysql_query($query,$cnn);
                 
@@ -105,6 +105,11 @@ function txLetras() {
 	{
 		alert('ingrese precio');
 		precio.focus();
+		return;
+	}
+        if (idunidad_medida.value==0)
+	{
+		alert('Seleccione Unidad de Medida');
 		return;
 	}
 	$.post('producto/producto_ope.php', 
