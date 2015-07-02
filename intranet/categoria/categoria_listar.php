@@ -9,7 +9,7 @@
 	<p class="form-title"> Lista de Categoria </p>
         
 	<table class="table">
-		<tr>
+		<tr bgcolor="lightblue">
                        <td> Nombre de Categoria </td>
                        <td> Estado </td>
                        
