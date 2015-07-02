@@ -5,7 +5,7 @@
 	$idalmacen = $_POST['idalmacen'];
 	$query = "update almacen set estado='I' where idalmacen=$idalmacen;" ;
 	if(mysql_query($query,$cnn)){
-		echo "Grupo dado de baja";
+		echo "Almacen dado de baja";
 	}else{
 		echo "Fallo";
 	}
