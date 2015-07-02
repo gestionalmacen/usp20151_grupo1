@@ -10,7 +10,7 @@
 	<p class="form-title"> Lista de Subcategoria </p>
         
 	<table class="table">
-		<tr>
+		<tr bgcolor="lightblue">
                        
                        <td> Nombre de Subcategoria </td>
                        <td> Nombre de Categoria </td>
@@ -18,8 +18,7 @@
 		</tr>
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
-				<td> <a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'subcategoria/subcategoria_mod.php?idsubcategoria=<?php echo $row[0];?>');" style="cursor:pointer">
-						<?php echo $row[1];?></a> </td>
+				<td><?php echo $row[1];?></td>
                                 <td> <?php echo $row[2];?> </td>
                                 
                             			
