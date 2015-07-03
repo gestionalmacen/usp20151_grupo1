@@ -36,10 +36,18 @@ class PDF extends FPDF
 }
 
 $mysql = new MySql();
-$rs = $mysql->ejecutar("SELECT i.fecha_registro,a.nombre ,i.tipo_inventario,
-case i.estado when 'A' then 'Activo' when 'I' then 'Inactivo' end as estado
-FROM inventario i INNER JOIN almacen a on a.idalmacen = i.idalmacen
-ORDER BY i.fecha_registro");
+$rs = $mysql->ejecutar("SELECT 
+i.fecha_registro,
+a.nombre,
+i.tipo_inventario,
+case i.estado 
+	when 'A' then 'Activo' 
+    when 'I' then 'Inactivo' 
+    end as estado
+FROM inventario i 
+INNER JOIN almacen a 
+ON a.idalmacen = i.idalmacen
+ORDER BY a.nombre ASC");
 $header = array('Nº', 'Fecha Registro', 'Almacen', 'Tipo Inventario','estado');
 $i = 0;
 while($row = mysqli_fetch_array($rs)){

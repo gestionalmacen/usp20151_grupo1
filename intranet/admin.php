@@ -126,23 +126,6 @@
 				</ul>
 			</li>	
 			<?php if($_SESSION['idgrupo_usuario']==3){ ?>			
-			<li class="dropdown"> 
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Reporte <b class="caret"></b></a>
-				<ul class="dropdown-menu">	
-					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
-						Movimiento por Oficina por Mes</a></li>
-					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
-						Movimiento por producto por periodo por mes</a></li>
-					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
-						Catalogo por almacen</a></li>
-					<li><a href="reporte/rep_alm_inv.php" target="_blank"  onclick="reporte('reporte/rep_alm_inv.php');" style="cursor:pointer">
-						Inventario por almacen</a></li>
-					<li><a href="" target="_blank"  onclick="" style="cursor:pointer">
-						Solicitud de bienes</a></li>
-					<li><a href="" target="_blank"  onclick="reporte('');" style="cursor:pointer">
-						Adquisición de productos a proveedor por periodo y mes</a></li>
-				</ul>			
-			</li>
 			<?php } ?>	
 		</ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -193,21 +176,7 @@
 				</li>	
 			</ul>
 			<?php } ?>
-		</li>
-		<li id="menu3"><a href="#">Mantenimiento</a>
-			<ul>
-				<!--Administrador-->
-                <?php if($_SESSION['idgrupo_usuario']==1){ ?>
-				<li class="subitem1">
-					<a href="#" onclick="load_div('contenido', 'forms/man_empleado.php');" style="cursor:pointer">
-						Empleado
-					</a>
-				</li>				
-			</ul>
-                    <?php } ?>
-                    
-                    
-		</li>
+
         <li id="menu4"><a href="#">Personal</a>
 			<ul>
 				<!--Administrador-->
@@ -220,12 +189,7 @@
 					<a href="#" onclick="load_div('contenido', 'usuario2/man_usuarios.php');" style="cursor:pointer">
 						Lista de Usuarios
 					</a>
-                </li>
-                <li class="subitem1">
-                        <a href="#" onclick="load_div('contenido', 'usuario3/index.php');" style="cursor:pointer">
-						Cambiar Contraseña
-					</a>
-				</li>			
+                </li>			
 			</ul>                   
 		</li>
 		<?php } ?>	
@@ -234,14 +198,24 @@
 			<ul>						
 			<?php if($_SESSION['idgrupo_usuario']==3){ ?>	
 				<li class="subitem1">
-					<a href="reporte/rep_alm_inv.php" target="_blank">Almacen por Inventario</a>					
-				</li>		
+					<a href="#" onclick="load_div('contenido', 'reporte/inv_por_almacen.php');" style="cursor:pointer">
+						Inventario por Almacen
+					</a>
+				</li>
 				<li class="subitem1">
-					<a href="reporte/rep_mov_ofi.php" target="_blank">Movimiento por Oficina</a>					
+					<a href="reporte/rep_inv_alm.php" target="_blank">Almacen por Inventario PDF</a>					
+				</li>
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'reporte/mov_por_oficina.php');" style="cursor:pointer">
+						Movimiento por Oficina
+					</a>
+				</li>
+				<li class="subitem1">
+					<a href="reporte/rep_mov_ofi.php" target="_blank">Movimiento por Oficina PDF</a>					
 				</li>
 				<li class="subitem1">
 					<a href="reporte/rep_cat_alm.php" target="_blank">Catalago por Almacen</a>					
-				</li>
+				</li>	
 				<li class="subitem1">
 					<a href="reporte/proveedores_rep.php" target="_blank">Proveedores</a>					
 				</li>				
