@@ -9,7 +9,7 @@
 	$rs = mysql_query($query,$cnn);
 ?>
 <center>
-	<p class="form-title"> Lista Producto </p>
+	<p class="form-title"> Lista de Notas de Salida </p>
 	<table class="table">
 		<tr bgcolor="lightblue">
 
