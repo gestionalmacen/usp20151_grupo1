@@ -91,7 +91,7 @@
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Apertura y Cierre por Inventario</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Kardex de Producto por mes</a></li>	
+						Kardex de Producto</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'categoria/categoria_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Categoria</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'subcategoria/subcategoria_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
@@ -100,7 +100,7 @@
 						Catalogo de Productos</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'proveedor/proveedor_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Proveedores</a></li>
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'nota_salida/notasalida_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Nota de Salida</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Nota de Ingreso</a></li>							
