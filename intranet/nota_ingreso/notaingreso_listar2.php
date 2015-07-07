@@ -1,14 +1,14 @@
 <?php
 	require_once ("../../conexion.php");
 	$cnn=conectar();
-        $id="select max(idnota_salida) from nota_salida";
+        $id="select max(idnota_ingreso) from nota_ingreso";
         $ids=mysql_query($id,$cnn);
         $rowid=  mysql_fetch_array($ids);
-        $idnota_salida=$rowid[0];
-	$query = "SELECT ns.idnota_salida,p.nombre,ns.cantidad_entregada,um.descripcion 
-        FROM detalle_notasalida ns
-        inner join unidad_medida um on ns.idunidad_medida=um.idunidad_medida
-        inner join producto p on ns.idproducto=p.idproducto where ns.idnota_salida=$idnota_salida" ;
+        $idnota_ingreso=$rowid[0];
+	$query = "SELECT ni.idnota_ingreso,p.nombre,ni.cantidad,um.descripcion 
+        FROM detalle_notaingreso ni
+        inner join unidad_medida um on ni.idunidad_medida=um.idunidad_medida
+        inner join producto p on ni.idproducto=p.idproducto where ni.idnota_ingreso=$idnota_ingreso" ;
 	$rs = mysql_query($query,$cnn);
         $num_registros = is_resource($rs) ? mysql_num_rows($rs) : 0;
 	if($num_registros>0){
@@ -42,4 +42,3 @@
                 }
                 ?>
 </center>
-
