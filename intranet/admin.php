@@ -103,7 +103,9 @@
 					<li><a href="#" onclick="load_div('contenido', 'nota_salida/notasalida_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Nota de Salida</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'nota_ingreso/notaingreso_reg.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
-						Nota de Ingreso</a></li>							
+						Nota de Ingreso</a></li>
+                                        <li><a href="#" onclick="load_div('contenido', 'solicitud/reportesolicitud_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+						Reporte de Solicitudes</a></li>        
 				<?php } ?>
 				<!--Fin-->
                 
