@@ -5,7 +5,7 @@
         $ids=mysql_query($id,$cnn);
         $rowid=  mysql_fetch_array($ids);
         $idsolicitud=$rowid[0];
-	$query = "SELECT ds.idsolicitud,p.nombre,ds.cantidad_solicitada,ds.cantidad_entregada,ds.saldo 
+	$query = "SELECT ds.idproducto,p.nombre,ds.cantidad_solicitada,ds.cantidad_entregada,ds.saldo 
         FROM detalle_solicitud ds
         inner join producto p on ds.idproducto=p.idproducto where ds.idsolicitud=$idsolicitud" ;
 	$rs = mysql_query($query,$cnn);
@@ -27,7 +27,7 @@
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
                               
-				<td> <a data-dismiss="modal" data-target="#myModal" onclick="load_div('contenido', 'solicitud/solicitud_reg.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
+				<td> <a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'solicitud/solicitud_modificar_cantidad_solicitada.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
 						<?php echo $row[1];?></a> </td>
                                 <td> <?php echo $row[2]?> </td>
                                 <td> <?php echo $row[3]?> </td>

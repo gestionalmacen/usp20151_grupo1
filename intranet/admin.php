@@ -88,9 +88,9 @@
 					<li class="dropdown-header">Productos</li>
 					<li><a href="#" onclick="load_div('contenido', 'almacen/almacen_pre_listar.php');" style="cursor:pointer">
                                                 Almacen</a> </li>              
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'apertura_inventario/inventario_reg.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Apertura y Cierre por Inventario</a></li>	
-					<li><a href="#" onclick="load_div('contenido', 'producto/producto_pre_list.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
+					<li><a href="#" onclick="load_div('contenido', 'kardex/kardex_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Kardex de Producto</a></li>	
 					<li><a href="#" onclick="load_div('contenido', 'categoria/categoria_pre_listar.php');load_div('contenidoweb', 'empty.php');" style="cursor:pointer">
 						Categoria</a></li>	
