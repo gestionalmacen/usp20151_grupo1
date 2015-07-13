@@ -23,7 +23,7 @@
 		</tr>
 		<?php while($row = mysql_fetch_array($rs)){ ?>
 			<tr>
-                                <td> <a data-toggle="modal"   onclick="load_div('contenido', 'apertura_inventario/apertura_reg.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
+                                <td> <a data-toggle="modal"   onclick="load_div('contenido', 'apertura_inventario/apertura_reg.php?idkardex=<?php echo $row[0];?>');" style="cursor:pointer">
 				<?php echo $row[1];?></a> </td>
 				<td> <?php echo $row[2];?> </td>
                                 <td> <?php echo $row[3];?> </td>
