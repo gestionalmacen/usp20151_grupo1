@@ -15,7 +15,7 @@
 			{
 				$idnota_salida = $row[0];				
 				$query2= "insert into detalle_notasalida(idnota_salida,idproducto,cantidad_entregada,idunidad_medida) values 
-				($idnota_salida,$idproducto,$cantidad,$idunidad_medida)";
+				($idnota_salida,$idproducto,$cantidad,$idunidad_medida) ";
 				
 				if(mysql_query($query2,$cnn))
                                 {

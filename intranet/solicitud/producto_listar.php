@@ -26,7 +26,7 @@
 				<td> <a data-dismiss="modal" data-target="#myModal" onclick="load_div('contenido', 'solicitud/solicitud_reg.php?idproducto=<?php echo $row[0];?>');" style="cursor:pointer">
 						<?php echo $row[1];?></a> </td>
                                 <td> <?php echo $row[2]?> </td>
-                                <td> <?php echo $row[3]?> </td>
+                                <td> <?php echo $row[4]?> </td>
                                 <td> <?php echo $row[5]?> </td>
 			
 			</tr>
