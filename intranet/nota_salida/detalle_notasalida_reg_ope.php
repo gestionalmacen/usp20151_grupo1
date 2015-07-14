@@ -19,7 +19,12 @@
 				
 				if(mysql_query($query2,$cnn))
                                 {
-                                    echo "Producto Agregado";
+                                    $query3="update kardex set stock_final=stock_final+$cantidad,stock_actual=stock_inicial-stock_final where idproducto=$idproducto";
+                                    if(mysql_query($query3,$cnn)){
+                                        echo "Producto Agregado";
+                                    }else{
+                                        echo "Fallo";
+                                    }
                                 }else
                                 {
                                     echo "Error:Producto ya fue Agregado";
