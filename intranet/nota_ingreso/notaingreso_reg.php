@@ -16,7 +16,8 @@
                 $uni_me = "select * from unidad_medida order by descripcion" ;
 		$rup = mysql_query($uni_me,$cnn);
                 
-                $query = "select * from producto where idproducto =$idproducto " ;
+                $query = "select p.idproducto,p.idunidad_medida,um.descripcion,p.nombre from producto p 
+                        inner join unidad_medida um on p.idunidad_medida=um.idunidad_medida where p.idproducto =$idproducto  " ;
 		$rbe = mysql_query($query,$cnn);
                 $rowe = mysql_fetch_array($rbe);
 	
@@ -63,9 +64,13 @@
 
        <tr height="45">
 		<td><label>Producto:</label></td>
+		
+                    
+       <input type="text" value="<?php echo $rowe[0]; ?>" style="visibility: hidden" id="txtempleado" disabled="true" class="form-control input-sm">
+                   
 		<td>
                     
-                    <input type="text" value="<?php echo $rowe[0]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
+                    <input type="text" value="<?php echo $rowe[3]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
                    
 		</td>
                 <td><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'nota_ingreso/buscar_producto.php');" style="cursor:pointer">
@@ -80,13 +85,13 @@
 	</tr>
         <tr height="45">
 		<td><label>Unidad de Medida:</label></td>
+     
+                   <input type="text" value="<?php echo $rowe[1]; ?>" style="visibility: hidden" id="txtidunidad_medida"  disabled="true" class="form-control input-sm">                
+		
 		<td>
-		<select name="idunidad_medida" id="idunidad_medida" size="1">
-		<option value="0" > Seleccione Unidad de Medida </option>
-		<?php while($rowu = mysql_fetch_array($rup)){ ?>
-		<option value="<?php echo $rowu[0]; ?>"> <?php echo $rowu[2]; ?> </option>
-		<?php } ?>
-		</select>
+                    
+                    <input type="text" value="<?php echo $rowe[2]; ?>" id="txtdescripcion_um"  disabled="true" class="form-control input-sm">
+                   
 		</td>
 
                 
@@ -140,7 +145,7 @@
         function agregar_producto(idproducto)
         {
             var cantidad = document.frm_notaingreso_reg.txtcantidad;
-            
+            var idunidad_medida = document.frm_notaingreso_reg.txtidunidad_medida;
             if(idproducto.value=='')
             {
                 alert('Seleccione producto');

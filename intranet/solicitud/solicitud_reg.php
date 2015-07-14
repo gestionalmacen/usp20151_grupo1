@@ -45,7 +45,7 @@
 		<td><label>Producto:</label></td>
 		<td>
                     
-                    <input type="text" value="<?php echo $rowe[0]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
+                    <input type="text" value="<?php echo $rowe[1]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
                    
 		</td>
                 <td><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'solicitud/buscar_producto.php');" style="cursor:pointer">

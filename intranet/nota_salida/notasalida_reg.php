@@ -13,7 +13,8 @@
                 $uni_me = "select * from unidad_medida order by descripcion" ;
 		$rup = mysql_query($uni_me,$cnn);
                 
-                $query = "select * from producto where idproducto =$idproducto " ;
+                $query = "select p.idproducto,p.idunidad_medida,um.descripcion,p.nombre from producto p 
+                        inner join unidad_medida um on p.idunidad_medida=um.idunidad_medida where p.idproducto =$idproducto " ;
 		$rbe = mysql_query($query,$cnn);
                 $rowe = mysql_fetch_array($rbe);
 	
@@ -46,9 +47,14 @@
 	</tr>
                 <tr height="45">
 		<td><label>Producto:</label></td>
-		<td>
+		
                     
-                    <input type="text" value="<?php echo $rowe[0]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
+                <input type="text" value="<?php echo $rowe[0]; ?>" style="visibility: hidden" id="txtempleado" disabled="true" class="form-control input-sm">
+                   
+		
+                <td>
+                    
+                    <input type="text" value="<?php echo $rowe[3]; ?>" id="txtempleado" disabled="true" class="form-control input-sm">
                    
 		</td>
                 <td><a data-toggle="modal" data-target="#myModal" onclick="load_div('modal_body', 'nota_salida/buscar_producto.php');" style="cursor:pointer">
@@ -61,21 +67,20 @@
 		<td><label>Cantidad Entregada:</label></td>
 		<td>
                     <input type="text" id="txtcantidad" onkeypress="ValidaSoloNumeros()" class="form-control input-sm" placeholder="Ingrese Cantidad Entregada">
-		</td>		
-	</tr>
-               <tr height="45">
-		<td><label>Unidad de Medida:</label></td>
-		<td>
-		<select name="idunidad_medida" id="idunidad_medida" size="1">
-		<option value="0" > Seleccione Unidad de Medida </option>
-		<?php while($row = mysql_fetch_array($rup)){ ?>
-		<option value="<?php echo $row[0]; ?>"> <?php echo $row[2]; ?> </option>
-		<?php } ?>
-		</select>
 		</td>
-
-                
-	</tr>
+        <tr height="45">
+		<td><label>Unidad de Medida:</label></td>
+   
+                    
+                    <input type="text" value="<?php echo $rowe[1]; ?>" style="visibility: hidden" id="txtidunidad_medida"  disabled="true" class="form-control input-sm">
+                   
+		
+		<td>
+                    
+                    <input type="text" value="<?php echo $rowe[2]; ?>" id="txtdescripcion_um"  disabled="true" class="form-control input-sm">
+                   
+		</td>
+        </tr>
         	
                 <td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
@@ -101,6 +106,7 @@
         function agregar_producto(idproducto)
         {
             var cantidad = document.frm_notasalida_reg.txtcantidad;
+            var idunidad_medida = document.frm_notasalida_reg.txtidunidad_medida;
             
             if(idproducto.value=='')
             {

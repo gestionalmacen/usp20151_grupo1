@@ -22,7 +22,7 @@
                                     echo "Producto Agregado";
                                 }else
                                 {
-                                    echo "Producto fue agregado";
+                                    echo "Error:Producto ya fue Agregado";
                                 }
 					
 			}

@@ -4,7 +4,7 @@
 		$cnn = conectar();
                 $cantidad = $_POST['cantidad'];
 		$idproducto = $_POST['idproducto'];	
-                $query="select max(idsolicitud) from detalle_solicitud";
+                $query="select max(idnota_salida) from detalle_notasalida";
                 
 		if (mysql_query($query, $cnn))	{
 		
@@ -12,15 +12,15 @@
 			
 			if ($row=mysql_fetch_array($rs))
 			{
-				$idsolicitud = $row[0];				
-				$query2= "update detalle_solicitud set cantidad_solicitada=$cantidad,saldo=$cantidad where idproducto=$idproducto and idsolicitud=$idsolicitud" ;
+				$idnota_salida = $row[0];				
+				$query2= "update detalle_notasalida set cantidad_entregada=$cantidad where idproducto=$idproducto and idnota_salida=$idnota_salida" ;
 				
 				if(mysql_query($query2,$cnn))
                                 {
                                     echo "Cantidad Modificada";
                                 }else
                                 {
-                                    echo "Producto fue agregado";
+                                    echo "Fallo";
                                 }
 					
 			}
