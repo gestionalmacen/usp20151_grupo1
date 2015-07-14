@@ -31,6 +31,7 @@
 
 	<tr height="45">
 		<td>
+                    <button type="button" onclick="cambiar_estado('<?php echo $row[0]; ?>');" class="btn btn-primary">Cambiar Estado</button>
 		</td>
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
@@ -82,6 +83,17 @@
 		{			
                         id              : id.value,
                         cantidad	: cantidad.value,
+                        idsolicitud     : idsolicitud
+		},
+		function (data){
+                    alert(data);
+		}
+	);
+    }
+    function cambiar_estado(idsolicitud)
+    {
+        $.post('solicitud/solicitud_modificar_estado.php', 
+		{			
                         idsolicitud     : idsolicitud
 		},
 		function (data){

@@ -3,11 +3,10 @@
 	$cnn=conectar();
         error_reporting(0);
 	$q = $_GET['q'];
-        $w = $_GET['w'];
 	$query = "select s.idsolicitud,u.nombre,a.nombre,s.fecha,s.estado from solicitud s
                  inner join usuario u on u.idusuario=s.idusuario
                  inner join area a on a.idarea=s.idarea
-                 where s.fecha between '$q' and '$w' order by s.fecha" ;
+                 where s.fecha between '$q' and CURRENT_TIMESTAMP order by s.fecha" ;
 	$rs = mysql_query($query,$cnn);
 ?>
 <center>
