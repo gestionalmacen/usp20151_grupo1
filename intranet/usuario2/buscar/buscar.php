@@ -13,7 +13,7 @@
 		<th>Estado</th>		
 		<th>Pregunta</th>	
 		<th>Respuesta</th>
-		<th>&nbsp;</th>
+
 	</tr>
 	<?php $nro = 0;
 		while($row = mysqli_fetch_array($rs)){ $nro++;?>		
@@ -22,12 +22,7 @@
 		<td><?php echo $row[1];?></td>
 		<td><?php echo $row[2];?></td>
 		<td><?php echo $row[3];?></td>
-		<td><?php echo $row[4];?></td>
-		<td><a data-toggle="modal" data-target="#myModal" 
-			   onclick="load_div('modal_body', 'usuario2/reg_usuario.php?idusuario=<?php echo $row[0]; ?>');" 
-			   style="cursor:pointer">Editar			
-			</a>
-		</td>		
+		<td><?php echo $row[4];?></td>	
 	</tr>	
 	<?php } ?>
 	<tr><td colspan="6"></td></tr>

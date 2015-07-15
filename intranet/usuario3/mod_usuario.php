@@ -36,7 +36,7 @@
 			
 			<p></p>	
 			
-			<a href="http://localhost:8080/usp20151_grupo1/intranet/admin.php">Regresar</a>		
+			<a href="http://localhost/usp20151_grupo1/intranet/admin.php">Regresar</a>		
 		</center>
 	</body>
 </html>
