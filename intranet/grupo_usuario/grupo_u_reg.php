@@ -14,7 +14,7 @@
 		</td>
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
-			<button type="button" onclick="registrar();" class="btn btn-primary">Registrar</button>
+			<button type="button" onclick="registrar()" class="btn btn-primary">Registrar</button>
                         
 		</td>
 	</tr>
