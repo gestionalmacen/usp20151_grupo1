@@ -42,6 +42,8 @@
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
 			<button type="button" onclick="producto_ope_mod('<?php echo $row[0]; ?>');" class="btn btn-primary">Modificar</button>
+                        <button type="button" onclick="producto_ope_mod_estado('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de Baja</button>
+                        <button type="button" onclick="producto_ope_mod_estado_alta('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de Alta</button>
 		</td>
 	</tr>
 </table>
@@ -50,6 +52,28 @@
     function ValidaSoloNumeros() {
  if ((event.keyCode < 48) || (event.keyCode > 57)) 
   event.returnValue = false;
+}
+function producto_ope_mod_estado(idproducto)
+{
+    $.post('producto/producto_mod_ope_estado.php', 
+		{
+                        idproducto      : idproducto
+		},
+		function (data){
+                    alert(data);
+		}
+	);
+}
+function producto_ope_mod_estado_alta(idproducto)
+{
+    $.post('producto/producto_mod_ope_estado_alta.php', 
+		{
+                        idproducto      : idproducto
+		},
+		function (data){
+                    alert(data);
+		}
+	);
 }
 function txLetras() {
  if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))

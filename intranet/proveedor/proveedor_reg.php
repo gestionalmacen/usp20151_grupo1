@@ -50,7 +50,7 @@
         <tr height="45">
 		<td><label>Categoria:</label></td>
 		<td>
-		<select name="idcategoria" id="idcategoria" size="1">
+                <select  name="idcategoria" id="idcategoria" size="1">
 		<option value="0" > Seleccione Categoria </option>
 		<?php while($rowc = mysql_fetch_array($rsp)){ ?>
 		<option value="<?php echo $rowc[0]; ?>"> <?php echo $rowc[1]; ?> </option>
@@ -60,7 +60,7 @@
 	</tr>
                 <td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
-			<button type="button" onclick="deta_cate_prove();" class="btn btn-primary">Guardar</button>
+                <button  id="boton_deta" type="button" onclick="deta_cate_prove();" class="btn btn-primary">Guardar</button>
 		</td>
 </table>
     
@@ -123,6 +123,8 @@
     }
     function deta_cate_prove()
     {
+        
+        
         if (idcategoria.value==0)
 	{
 		alert('seleccione una categoria');

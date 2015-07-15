@@ -7,7 +7,7 @@
 	</tr>
 	<tr height="45">
 		<td width="100px"><label>Nombre del grupo:</label></td>
-		<td><input type="text" id="txtgrupo" class="form-control input-sm" placeholder="Ingrese nombre de grupo"></td>
+                <td><input type="text" id="txtgrupo" onkeypress="txNombres()" class="form-control input-sm" placeholder="Ingrese nombre de grupo"></td>
 	</tr>
 	<tr height="45">
 		<td>
@@ -22,8 +22,18 @@
 </form>
 
 <script>
+    function txNombres() {
+        if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+        event.returnValue = false;
+    }
     function registrar(){
         var grupo = document.frm_grupo.txtgrupo;
+        if (grupo.value =="")
+	{
+		alert('Ingrese Grupo');
+		grupo.focus();
+		return;
+	}
         $.post('grupo_usuario/grupo_reg_ope.php', 
 		{	grupo : grupo.value
 		},
