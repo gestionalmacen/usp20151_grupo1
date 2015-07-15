@@ -216,6 +216,16 @@
 					<a href="reporte/rep_mov_ofi.php" target="_blank">Movimiento por Oficina PDF</a>					
 				</li>
 				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'reporte/adq_pro.php');" style="cursor:pointer">
+						Adquisición de Productos
+					</a>
+				</li>
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'reporte/sol_bie.php');" style="cursor:pointer">
+						Solicitud de Bienes
+					</a>
+				</li>
+				<li class="subitem1">
 					<a href="reporte/rep_cat_alm.php" target="_blank">Catalago por Almacen</a>					
 				</li>	
 				<li class="subitem1">
