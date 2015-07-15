@@ -175,10 +175,14 @@
 					<a href="#" onclick="load_div('contenido', 'usuario/usuario_pre_listar.php');" style="cursor:pointer">
 						Listar Usuario 
 					</a>
+                </li>
+				<li class="subitem1">
+					<a href="#" onclick="load_div('contenido', 'usuario2/man_usuarios.php');" style="cursor:pointer">
+						Usuarios Activo y Inactivos
+					</a>			
 				</li>	
 			</ul>
 			<?php } ?>
-
 
 		<?php } ?>	
 		<?php if($_SESSION['idgrupo_usuario']==3){ ?>	

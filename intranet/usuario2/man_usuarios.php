@@ -6,7 +6,7 @@
 		<br/>
 		<table>	
 			<tr height="45">		
-				<td colspan="3" bgcolor="#ECEEF1" class="form-subtitle">&nbsp;&nbsp;Usuarios registrados</td>									
+				<td colspan="3" bgcolor="#ECEEF1" class="form-subtitle">&nbsp;&nbsp;Usuarios Activos Inactivos</td>									
 			</tr>
 			<tr>		
 				<td colspan="3">&nbsp;</td>									
@@ -19,12 +19,6 @@
 				           onblur="limpiaLetras('txtusuario');"
 						   placeholder="Ingrese nombre del usuario" maxlength="30">
 				</td>
-				<td><a class="btn btn-primary" data-toggle="modal" data-target="#myModal" 
-					   onclick="load_div('modal_body', 'usuario2/reg_usuario.php');" 
-				       style="cursor:pointer">
-						Nuevo Usuario
-					</a>
-				</td>	
 			</tr>
 			<tr height="30">
 				<td>Estado:</td>
