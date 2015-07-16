@@ -12,19 +12,32 @@
 			
 			if ($row=mysql_fetch_array($rs))
 			{
-				$idsolicitud = $row[0];				
+				$idsolicitud = $row[0];
+                                $id="select stock_actual from kardex where idproducto=$idproducto";
+                                $s=mysql_query($id,$cnn);
+                                $select=mysql_fetch_array($s);
+                                $stock_inicial=$select[0];
+                                if($cantidad<=$stock_inicial){
 				$query2= "update detalle_solicitud set cantidad_solicitada=$cantidad,saldo=$cantidad where idproducto=$idproducto and idsolicitud=$idsolicitud" ;
 				
-				if(mysql_query($query2,$cnn))
-                                {
-                                    echo "Cantidad Modificada";
-                                }else
-                                {
-                                    echo "Producto fue agregado";
-                                }
+                                    if(mysql_query($query2,$cnn))
+                                    {
+                                        echo "Cantidad Modificada";
+                                    }else
+                                    {
+                                        echo "Producto fue agregado";
+                                    }
 					
-			}
-			else{echo "fallo";}
+                        }else
+                            {
+                            echo "Sobre paso el limite actual de $stock_inicial";
+                            
+                            }
+                        }else
+                            {
+                            echo "fallo";
+                            
+                            }
 		}else{
                     echo "fallo";
                 

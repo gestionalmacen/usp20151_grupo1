@@ -18,7 +18,8 @@
 			</tr>			
 			<tr height="30">
 				<td>Fecha:</td>
-				<td>					
+				<td>	
+                                   
 					<select id="cboSeccion" name="cboSeccion" onchange="buscar_examen();" class="form-control input-sm">
 						<option value="0">(Todo)</option>
 						<?php $nro = 0;						
@@ -78,4 +79,5 @@ function buscar_examen(){
 	var examen  = document.frm_man_examenes.txtexamen.value;
 	load_div("subcontenido","reporte/adq_pro/buscar2_click.php?n="+examen+"&s="+seccion);
 }
+
 </script>

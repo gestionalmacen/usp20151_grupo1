@@ -13,7 +13,7 @@
 			if ($row=mysql_fetch_array($rs))
 			{
 				$idsolicitud = $row[0];
-                                $id="select stock_inicial from kardex where idproducto=$idproducto";
+                                $id="select stock_actual from kardex where idproducto=$idproducto";
                                 $s=mysql_query($id,$cnn);
                                 $select=mysql_fetch_array($s);
                                 $stock_inicial=$select[0];
