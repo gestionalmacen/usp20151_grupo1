@@ -11,7 +11,7 @@
 <table width="373">
 	<tr>
 		<td colspan="2">
-			<center><p class="form-title">Dar de baja o alta</p><br/></center>
+			<center><p class="form-title">Modificar Grupo de Usuario</p><br/></center>
 		</td>
 	</tr>
 	<tr height="45">
@@ -23,6 +23,7 @@
 		</td>
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
+                        <button type="button" data-dismiss="modal" onclick="modificar('<?php echo $row[0]; ?>');" class="btn btn-primary">Modificar</button>
 			<button type="button" data-dismiss="modal" onclick="baja('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de baja</button>
                         <button type="button" data-dismiss="modal" onclick="alta('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de alta</button>
 		</td>
@@ -36,6 +37,20 @@
         $.post('grupo_usuario/grupo_baja_ope.php', 
 		{	grupo : grupo.value,
                         idgrupo_usuario : idgrupo_usuario
+		},
+		function (data){
+                    alert(data);
+		}
+	);
+    }
+    
+        function modificar(idgrupo_usuario)
+    {
+        var grupo = document.frm_grupo_baja.txtgrupo;
+        $.post('grupo_usuario/grupo_mod_ope.php', 
+		{	
+                        grupo    : grupo.value,
+                        idgrupo_usuario :idgrupo_usuario
 		},
 		function (data){
                     alert(data);

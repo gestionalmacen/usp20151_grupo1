@@ -11,7 +11,7 @@
 <table width="373">
 	<tr>
 		<td colspan="2">
-			<center><p class="form-title">Dar de baja o alta</p><br/></center>
+			<center><p class="form-title">Modificar Usuario</p><br/></center>
 		</td>
 	</tr>
 	<tr height="45">
@@ -23,6 +23,7 @@
 		</td>
 		<td>
 		<!--<button type="button" class="btn btn-default">Limpiar</button>-->
+                        <button type="button" onclick="modificar('<?php echo $row[0]; ?>');" class="btn btn-primary">Mofidicar</button>
 			<button type="button" onclick="baja('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de baja</button>
                         <button type="button" onclick="alta('<?php echo $row[0]; ?>');" class="btn btn-primary">Dar de alta</button>
 		</td>
@@ -41,7 +42,19 @@
 		}
 	);
     }
-    
+    function modificar(idusuario)
+    {
+        var nombre = document.frm_usuario_baja.txtnombre;
+        $.post('usuario/usuario_mod_ope.php', 
+		{	
+                        nombre    : nombre.value,
+                        idusuario :idusuario
+		},
+		function (data){
+                    alert(data);
+		}
+	);
+    }
    function alta(idusuario){
         var nombre = document.frm_usuario_baja.txtnombre;
         $.post('usuario/usuario_alta_ope.php', 
