@@ -14,7 +14,8 @@
 			{
 				$idnota_salida = $row[0];				
 				$query2= "update detalle_notasalida set cantidad_entregada=$cantidad where idproducto=$idproducto and idnota_salida=$idnota_salida" ;
-				
+                                $update="update kardex set stock_final=$cantidad,stock_actual=stock_inicial-stock_final where idproducto=$idproducto";
+				mysql_query($update,$cnn);
 				if(mysql_query($query2,$cnn))
                                 {
                                     echo "Cantidad Modificada";
